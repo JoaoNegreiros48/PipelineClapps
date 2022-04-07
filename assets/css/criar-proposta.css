@@ -1,0 +1,104 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #E8E8E8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.criar-proposta{
+    width: 100%;
+    max-width: 500px;
+    height: 80%;
+    max-height: 500px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    align-items: center;
+}
+.criar-proposta #title{
+    font-size: 20px;
+    font-weight: 800;
+    opacity: 70%;
+}
+.criar-proposta #line{
+    height: 2px;
+    width: 100%;
+    background-color: #E8E8E8;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.criar-proposta form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.criar-proposta #form-text{
+    font-size: 14px;
+    font-weight: 800;
+    opacity: 70%;
+}
+input[type = 'text']{
+    width: calc(100% - 5px);
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type = 'date']{
+    width: calc(100% - 5px);
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input:focus{
+    border: 1px solid #4D72DF;
+}
+button[type = "submit"]{
+    height: 35px;
+    width: 250px;
+    margin-top: 50px;
+    background-color: #4D72DF;
+    border: 1px solid #4D72DF;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+#help{
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 800;
+    opacity: 70%;
+    color: #4D72DF;
+}
+#fechar{
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: .1px solid #8B8C8F;
+    color: #8B8C8F;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: 45%;
+}
+#fechar:hover{
+    border: .1px solid #2C2C2C;
+    color: #2C2C2C;
+}

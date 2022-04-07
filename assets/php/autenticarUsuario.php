@@ -10,7 +10,7 @@
         if(mysqli_num_rows($sql) > 0){
             $executar = $conexao->query("SELECT * FROM usuarios where email = '$email';");
             while($linha = $executar->fetch_array()){
-                $_SESSION["usuariosId"] = $linha['id'];
+                $_SESSION["id"] = $linha['id'];
             }
 
             header("Refresh:0;url=../../main.html");
