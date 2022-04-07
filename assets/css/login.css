@@ -1,0 +1,352 @@
+body{
+    overflow-x: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.apresentacao{
+    height: 100%;
+    width: 33.3%;
+    background-color: #1E2C39;
+
+    display: flex;
+    flex-direction: column;
+}
+.apresentacao #img img{
+    width: 100%;
+    z-index: 0;
+    height: 100px;
+}
+.apresentacao #logo{
+    margin-top: 0;
+    font-size: 30px;
+    margin-left: 65px;
+    margin-right: 50px;
+}
+.apresentacao #title{
+    margin-top: 25px;
+    font-size: 24px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-left: 65px;
+    margin-right: 50px;
+}
+.apresentacao #descricao{
+    margin-top: 25px;
+    font-size: 18px;
+    text-align: left;
+    color: white;
+    font-weight: 400;
+    
+    line-height: 25px;
+    letter-spacing: 1px;
+    width: 80%;
+    margin-left: 65px;
+    margin-right: 50px;
+}
+
+.login{
+    height: 100%;
+    width: 33.3%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login .conteudo{
+    height: 100%;
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.login .conteudo #title{
+    margin-top: 50px;
+    color: #38B7BE;
+    font-size: 18px;
+    font-weight: 700;
+}
+.login .conteudo #descricao{
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 85%;
+}
+.login .conteudo #login{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+}
+.login .conteudo #login input[type='text']{
+    height: 50px;
+    border: 1px solid #D2D6DF;
+    background-color: #F5F6FA;
+    border-radius: 5px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+.login .conteudo #login input[type='submit']{
+    background-color: #38B7BE;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.login .conteudo #login #mostrarSenha{
+    cursor: pointer;
+    color: #38B7BE;
+    font-weight: 700;
+    margin-right: 15px;
+}
+.login .conteudo #login .senha{
+    margin-top: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+    border: 1px solid #D2D6DF;
+    background-color: #F5F6FA;
+    margin-bottom: 16px;
+    border-radius: 5px;
+}
+.login .conteudo #login .senha input{
+    width: 88%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    padding-left: 15px;
+    background-color: #F5F6FA;
+}
+
+.login .conteudo #login a{
+    margin-left: max-content;
+    text-decoration: none;
+    color: #38B7BE;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+.login .conteudo #login p{
+    margin-bottom: 2px;
+    font-size: 14px; 
+    color: #E14A39;
+}
+.login .conteudo #btn-social{
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.login .conteudo #lembrar{
+    margin-top: 20px;
+    height: 50px;
+    width: 100%;
+    border-top: 1px solid #E9E9E9;
+    border-bottom: 1px solid #E9E9E9;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.login .conteudo #lembrar input[type=checkbox]{
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login .conteudo #termos{
+    opacity: 95%;
+    margin-top: 0;
+}
+.login .conteudo #termos a{
+    cursor: pointer;
+    color: #38B7BE;
+    text-decoration: none;
+}
+
+.cadastro{
+    height: 100%;
+    width: 33.3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.cadastro .margin{
+    height: 40%;
+    width: 1px;
+    border: 2px dashed #38B7BE;
+}
+.cadastro .conteudo{
+    display: flex;
+    flex-direction: column;
+    height: 60%;
+    width: 70%;
+    margin-left: 15%;
+    background-color: #1E2C39;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.cadastro .conteudo #title{
+    margin-top: 50px;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+.cadastro .conteudo img{
+    margin-bottom: 100px;
+}
+.cadastro .conteudo #descricao{
+    color: white;
+    font-size: 26px;
+    font-weight: 400;
+}
+#categoria{
+    height: 50px;
+    border: 1px solid #D2D6DF;
+    background-color: #F5F6FA;
+    border-radius: 5px;
+    padding-left: 15px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+option{
+    opacity: 80%;
+}
+
+@media (max-width: 1024px) and (orientation: landscape){
+    .cadastro .conteudo img{
+        margin-bottom: 100px;
+        width: 80%;
+    }
+    .cadastro .conteudo #descricao{
+        font-size: 20px;
+    }
+    .apresentacao #logo{
+        margin-left: 10px;
+    }
+    .apresentacao #title{
+        margin-left: 30px;
+        font-size: 20px;
+    }
+    .apresentacao #descricao{
+        margin-left: 30px;
+        font-size: 14px;
+        word-spacing: 4px;
+    }
+    .login .conteudo #login .senha input{
+        width: 77%;
+    }
+    .login .conteudo #login a{
+        margin-left: 47%;
+    }
+}
+
+@media (max-width: 1024px) and (orientation: portrait){
+    .container {
+        flex-direction: column;
+    }
+    .apresentacao{
+        display: none;
+    }
+    .apresentacao #logo{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .apresentacao #descricao{
+        margin-bottom: 200px;
+    }
+    .login{
+        width: 100%;
+    }
+    .cadastro{
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+        align-items: center;
+        margin-top: 25px;
+    }
+    .cadastro .margin{
+        display: none;
+    }
+    .cadastro .conteudo{
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        border-radius: 0;
+    }
+    .cadastro .conteudo img{
+        margin-bottom: 50px;
+        width: 50%;
+    }
+    .cadastro .conteudo #descricao{
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 414px) and (orientation: portrait){
+    .container {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vw;
+    }
+    .apresentacao{
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    /* .apresentacao #logo{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .apresentacao #descricao{
+        margin-bottom: 200px;
+    } */
+    .login{
+        min-width: 100vw;
+        min-height: 100vh;
+    }
+    .cadastro{
+        flex-direction: column;
+        width: 100%;
+        padding-left: 0;
+        align-items: center;
+        margin-top: 25px;
+    }
+    .cadastro .margin{
+        display: none;
+    }
+    .cadastro .conteudo{
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+        border-radius: 0;
+    }
+    .cadastro .conteudo img{
+        margin-bottom: 50px;
+        width: 50%;
+    }
+    .cadastro .conteudo #descricao{
+        margin-bottom: 50px;
+    }
+}

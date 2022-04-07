@@ -1,0 +1,146 @@
+textarea:focus, input:focus, select:focus, button:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: #38B7BE;
+    font-weight: 700;
+    cursor: pointer;
+}
+button{
+    background-color: #38B7BE;
+    height: 50px;
+    width: 120px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #F9F9F9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+}
+.apresentacao{
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+}
+.apresentacao p{
+    opacity: 80%;
+}
+.apresentacao #ou{
+    color: #8A8A8A;
+}
+#btn-social{
+    height: 50px;
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 5px;
+    cursor: pointer;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    height: 10px;
+    width: 450px;
+    background-color: #FFFFFF;
+    /* padding: 20px; */
+}
+.formulario #title{
+    font-size: 20px;
+    opacity: 90%;
+}
+.formulario input{
+    height: 50px;
+    border: 1px solid #D2D6DF;
+    background-color: #F5F6FA;
+    border-radius: 5px;
+    padding-left: 15px;
+    width: 96%;
+    margin-bottom: 10px;
+}
+.formulario .email{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5F6FA;
+    margin-bottom: 10px;
+    border: 1px solid #D2D6DF;
+    border-radius: 5px;
+}
+.formulario .email input{
+    width: 55%;
+    margin-bottom: 0;
+    border: none;
+}
+.formulario .email p{
+    font-size: 14px;
+    opacity: 80%;
+}
+#direitos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 450px;
+    margin-top: 0px;
+}
+
+#direitos p{
+    font-size: 14px;
+}
+
+#mostrarSenha{
+    cursor: pointer;
+    color: #38B7BE;
+    font-weight: 700;
+}
+
+.senha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5F6FA;
+    border: 1px solid #D2D6DF;
+    border-radius: 5px;
+}
+.senha input{
+    width: 80%;
+    border: none;
+}
+.senha p{
+    font-size: 14px;
+    opacity: 80%;
+}
+
+/* Responsividade para notebooks */
+@media (max-width: 1440px)
+{
+    #btn-social{
+        height: 40px;
+    }
+    .formulario{
+        height: 250px;
+    }
+}

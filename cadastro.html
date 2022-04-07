@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./styles/assets/favicon.png"/>
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <title>Clapps | Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="apresentacao">
+            <!-- <img src="./styles/assets/logo.png" height="110px" width="280px" alt=""> -->
+            <p>Cadastre-se para utilizar a plataforma</p>
+            <button id="btn-social" onclick="redirecionarFacebookLogin()" style="background-color: #385398;"><img src="" alt="">Conecte-se com o Facebook</button>
+            <button id="btn-social" onclick="redirecionarGoogleLogin()" style="background-color: #E14A39;"><img src="" alt="">Conecte-se com o Google</button>
+            <p id="ou">OU</p>
+        </div>
+
+        <div class="formulario">
+            <p id="title">Crie o perfil para sua empresa</p>
+            <form action="./assets/php/cadastrarUsuario.php" method="POST" id="formulario">
+                <div class="email">
+                    <input type="text" placeholder="E-mail" name="email">
+                    <p>Já tem uma conta? <a href="index.php">Entrar</a></p>
+                </div>
+                <div class="senha">
+                    <input type="password" id="senha" placeholder="Senha" name="senha">
+                    <p id="mostrarSenha" onclick="mostrarSenha()">Mostrar</p>
+                </div>
+            </form>
+        </div>
+
+        <div class="direitos">
+            <form action="" id="direitos">
+                <input type="checkbox" name="" id="check"> <p>Li e concordo com a <a href="">Política de Privacidade</a> e os <a href="">Termos de Serviço</a></p>
+            </form>
+        </div>
+        <button onclick="submit()">Cadastrar</button>
+
+        <script>
+            function submit(){
+                let checkbox = document.getElementById('check')
+                if(checkbox.checked){
+                    document.getElementById("formulario").submit();
+                } else{
+                    alert("Confirme que leu os termos de serviço e política de privacidade")
+                }
+            }
+            let controle = 0;
+            function mostrarSenha(){
+                // document.getElementById('senha').type = "text"
+                if(controle == 0){
+                    document.getElementById('senha').type = "text"
+                    controle = 1
+                }
+                else{
+                    document.getElementById('senha').type = "password"
+                    controle = 0
+                }
+            }
+
+            function redirecionarFacebookLogin(){
+            window.location.replace("facebookLogin.php");
+            }
+            function redirecionarGoogleLogin(){
+                window.location.replace("autenticarUsuarioGoogle.php");
+            }
+        </script>
+    </div>
+</body>
+</html>
