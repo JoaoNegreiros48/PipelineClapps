@@ -39,7 +39,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Qualificado';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Contatado';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Apresentado';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta feita';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -83,7 +83,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Sob contrato';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                             $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta rejeitada';");
                             while($linha = $sql->fetch_array()){
                         ?>
-                        <div class="card" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
                         <?php } ?>
                     </div>
                 </div>
@@ -104,6 +104,11 @@
 
 
     <script>
+        function abrirNegocio(obj){
+            id = obj
+            window.location.href = "./acessar-negocio.php?id=" + id;
+        }
+
         // ------ Drag and drop ------
 
         const cards = document.querySelectorAll("[draggable='true']")
@@ -204,6 +209,7 @@
                 });
             }
         }
+
         function terminar(){
             this.classList.remove("arrastando")
             console.log("asfdas")
