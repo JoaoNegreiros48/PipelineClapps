@@ -13,7 +13,7 @@
                 $_SESSION["id"] = $linha['id'];
             }
 
-            header("Refresh:0;url=../../main.html");
+            header("Refresh:0;url=../../main.php");
             $_SESSION["autenticacao"] = 1;
         } else{
             $_SESSION["autenticacao"] = "erro";

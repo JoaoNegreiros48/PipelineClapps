@@ -10,11 +10,11 @@
     $data = mysqli_real_escape_string($conexao, $_POST['data']);
     $id = $_SESSION['id'];
 
-    $sql =  mysqli_query($conexao, "insert into negocio (idUsuario, emailCliente, nomeCliente, nomeProjeto, valor, telefone, dataNegocio) values (1, '$emailCliente', '$nomeCliente', '$nomeProjeto', '$valor', '$telefone', '$data');");
+    $sql =  mysqli_query($conexao, "insert into negocio (idUsuario, emailCliente, nomeCliente, nomeProjeto, valor, telefone, dataNegocio, tipo) values (1, '$emailCliente', '$nomeCliente', '$nomeProjeto', '$valor', '$telefone', '$data', 'Qualificado');");
 
 
     if($sql){
-        header("Refresh:0;url=../../main.html");
+        header("Refresh:0;url=../../main.php");
     }
     else{
         header("Refresh: 0; url = ../../criar-negocio.html");
