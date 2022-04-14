@@ -2,6 +2,12 @@
     include "./assets/php/conecta.php";
     session_start();
     $id = $_SESSION['id'];
+
+    $sql =  mysqli_query($conexao, "select * from usuarios where id = $id;");
+    while($linha = $sql->fetch_array()){
+        $nome = $linha['nome'];
+        $email = $linha['email'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,8 +36,8 @@
                 <div class="perfil">
                     <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
                     <div class="nome">
-                        <p>Nome de usuario</p>
-                        <p>email@contato.com</p>
+                        <p><?php echo $nome?></p>
+                        <p><?php echo $email?></p>
                     </div>
                 </div>
             </div>
