@@ -29,11 +29,22 @@
     <title>Clapps | Main</title>
 </head>
 <body>
-    <div class="container">
+    <div class="perfil-active" id="perfil-active">
+        <div class="img">
+            <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
+        </div>
+        <div class="nome">
+            <p><?php echo $nome?></p>
+           <p><?php echo $email?></p>
+        </div>
+        <a href="./assets/php/sair.php" class="sair">Sair</a>
+    </div>
+    <div class="container" id="container">
         <div class="leftbar"></div>
-        <div style="display: flex; flex-direction: column; width: 100%">
+        
+        <div style="display: flex; flex-direction: column; width: 100%" id="main">
             <div class="navbar">
-                <div class="perfil">
+                <div class="perfil" onclick="abrirPerfil()">
                     <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
                     <div class="nome">
                         <p><?php echo $nome?></p>
@@ -120,6 +131,20 @@
 
 
     <script>
+        function abrirPerfil(){
+            document.getElementById('perfil-active').style = "display: flex; z-index: 2; position: fixed;"
+            document.getElementById('container').style = "opacity: 50%;"
+            setTimeout(function(){
+                document.getElementById('container').setAttribute('onclick', "fecharPerfil()")
+            },100);
+            
+        }
+        function fecharPerfil(){
+            document.getElementById('perfil-active').style = "display: none;"
+            document.getElementById('container').style = "opacity: 100%;"
+            document.getElementById('container').setAttribute('onclick', "")
+        }
+
         function abrirNegocio(obj){
             id = obj
             window.location.href = "./acessar-negocio.php?id=" + id;

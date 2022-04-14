@@ -21,6 +21,7 @@ body{
     margin-right: 30px;
     display: flex;
     flex-direction: row;
+    cursor: pointer;
 }
 .perfil img{
     height: 36px;
@@ -43,6 +44,66 @@ body{
     font-weight: 700;
     opacity: 95%;
     font-size: 12px;
+}
+.perfil-active{
+    height: 100vh;
+    width: 25vw;
+    position: fixed;
+    right: 0;
+    z-index: 1;
+    background-color: #F3F3F3;
+    display:none;
+    flex-direction: column;
+    align-items: center;
+}
+.perfil-active .img{
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+.perfil-active .img img{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+.perfil-active .nome{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.perfil-active .nome p:first-child{
+    font-weight: 700;
+    color: #272727;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.perfil-active .nome p:last-child{
+    font-weight: 700;
+    opacity: 95%;
+    font-size: 14px;
+    text-transform: none;
+    margin-top: 15px;
+}
+.perfil-active .sair{
+    height: 30px;
+    width: 110px;
+    margin-top: 25px;
+    background-color: #4E73E3;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .leftbar{
     width: 70px;
