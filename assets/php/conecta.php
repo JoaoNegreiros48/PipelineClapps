@@ -1,4 +1,9 @@
 <?php
+    // $servidor = "localhost";
+    // $usuario = "clapps_userpipeline";
+    // $pass = ".524md~6bfCi";
+    // $bd = "clapps_Pipeline";
+
     $servidor = "localhost";
     $usuario = "root";
     $pass = "";
@@ -13,18 +18,4 @@
         return date('d/m/Y', strtotime($data));
     }
 
-    // $servidor = "localhost";
-    // $usuario = "root";
-    // $pass = "";
-    // $bd = "omnisegureFinal";
-
-    // $conecta = new mysqli($servidor, $usuario, $pass, $bd);
-
-    // if($conexao){
-    //     echo "conectado";
-    // }else{
-    //     echo "não conectado";
-    // }
-
-    // var_dump($conexao);
 ?>
