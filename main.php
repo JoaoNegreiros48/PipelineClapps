@@ -20,82 +20,92 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
     
-    <title>Main</title>
+    <title>Clapps | Main</title>
 </head>
 <body>
     <div class="container">
-        <div class="navbar"></div>
         <div class="leftbar"></div>
-        <div class="main">
-            <div class="topo">
-                <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="color: #858796;">Meus negócios</p></div>
-                <a href="./criar-negocio.html" id="criar-proposta">Criar negócio</a>
+        <div style="display: flex; flex-direction: column; width: 100%">
+            <div class="navbar">
+                <div class="perfil">
+                    <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
+                    <div class="nome">
+                        <p>Nome de usuario</p>
+                        <p>email@contato.com</p>
+                    </div>
+                </div>
             </div>
-            <div class="pipeline">
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #4E46FC;"><p>Qualificado</p></div>
-                    <div class="dropzone" id="dropzone">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Qualificado';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
-                    </div>
+            <div class="main">
+                <div class="topo">
+                    <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="color: #858796;">Meus negócios</p></div>
+                    <a href="./criar-negocio.html" id="criar-proposta">Criar negócio</a>
                 </div>
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #9B51E0;"><p>Contatado</p></div>
-                    <div class="dropzone" id="dropzone1">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Contatado';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
+                <div class="pipeline">
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #4E46FC;"><p>Qualificado</p></div>
+                        <div class="dropzone" id="dropzone">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Qualificado';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #30D46F;"><p>Apresentado</p></div>
-                    <div class="dropzone" id="dropzone2">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Apresentado';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #9B51E0;"><p>Contatado</p></div>
+                        <div class="dropzone" id="dropzone1">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Contatado';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #D69108;"><p>Proposta feita</p></div>
-                    <div class="dropzone" id="dropzone3">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta feita';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #30D46F;"><p>Apresentado</p></div>
+                        <div class="dropzone" id="dropzone2">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Apresentado';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #42E2CF;"><p>Sob contrato</p></div>
-                    <div class="dropzone" id="dropzone4">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Sob contrato';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #D69108;"><p>Proposta feita</p></div>
+                        <div class="dropzone" id="dropzone3">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta feita';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
                     </div>
-                </div>
-                <div class="guia">
-                    <div class="titulo" style="border-top: 3px solid #E14A39;"><p>Proposta rejeitada</p></div>
-                    <div class="dropzone" id="dropzone5">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta rejeitada';");
-                            while($linha = $sql->fetch_array()){
-                        ?>
-                        <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
-                        <?php } ?>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #42E2CF;"><p>Sob contrato</p></div>
+                        <div class="dropzone" id="dropzone4">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Sob contrato';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #E14A39;"><p>Proposta rejeitada</p></div>
+                        <div class="dropzone" id="dropzone5">
+                            <?php
+                                $sql =  mysqli_query($conexao, "select * from negocio where idUsuario = $id and tipo = 'Proposta rejeitada';");
+                                while($linha = $sql->fetch_array()){
+                            ?>
+                            <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true"><p><?php echo $linha['nomeProjeto'] ?></p><p id="idNegocio"><?php echo $linha['id'] ?></p></div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
