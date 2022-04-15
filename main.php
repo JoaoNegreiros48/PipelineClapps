@@ -40,7 +40,17 @@
         <a href="./assets/php/sair.php" class="sair">Sair</a>
     </div>
     <div class="container" id="container">
-        <div class="leftbar"></div>
+        <div class="leftbar">
+            <div class="logo"></div>
+            <a href="google.com" class="item">
+                <img src="./assets/img/p.png" alt="">
+                <p>Proposta</p>
+            </a>
+            <a href="google.com" class="item">
+                <img src="./assets/img/p.png" alt="">
+                <p>Proposta</p>
+            </a>
+        </div>
         
         <div style="display: flex; flex-direction: column; width: 100%" id="main">
             <div class="navbar">
