@@ -1,0 +1,75 @@
+.meuPerfil{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.meuPerfil #titulo{
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #1F2D3D;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+form{
+    width: 75%;
+    height: 50%;
+    margin-left: 30px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+label{
+    font-size: 14px;
+    color: #1F2D3D;
+}
+input[type = 'text']{
+    width: 300px;
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#mostrarSenha{
+    cursor: pointer;
+    color: #4E73DF;
+    font-weight: 700;
+}
+
+.senha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5F6FA;
+    border: 1px solid #D2D6DF;
+    border-radius: 5px;
+    width: 300px;
+    height: 35px;
+}
+.senha input{
+    width: 80%;
+    border: none;
+    height: 30px;
+    margin-left: 2px;
+}
+.senha p{
+    font-size: 14px;
+    opacity: 80%;
+}
+button{
+    background-color: #4E73DF;
+    height: 35px;
+    width: 120px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    margin-top: 15px;
+    cursor: pointer;
+}

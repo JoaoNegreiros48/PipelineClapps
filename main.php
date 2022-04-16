@@ -37,7 +37,10 @@
             <p><?php echo $nome?></p>
            <p><?php echo $email?></p>
         </div>
-        <a href="./assets/php/sair.php" class="sair">Sair</a>
+        <div style="display: flex; flex-direction: none; width: 70%; justify-content: space-between;">
+            <a href="./assets/php/sair.php" class="sair">Sair</a>
+            <a href="./perfil.php?id=<?php echo $id ?>" class="sair">Perfil</a>
+        </div>
     </div>
     <div class="container" id="container">
         <div class="leftbar">

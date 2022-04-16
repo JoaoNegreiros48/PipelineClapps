@@ -105,6 +105,19 @@ body{
     align-items: center;
     justify-content: center;
 }
+.perfil-active .sair:last-child{
+    height: 30px;
+    width: 110px;
+    margin-top: 25px;
+    background-color: 	#F3F3F3;
+    border: 1px solid #4E73E3;
+    border-radius: 5px;
+    color: #4E73E3;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .leftbar{
     width: 70px;
     height: 100%;
