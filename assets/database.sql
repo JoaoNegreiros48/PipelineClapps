@@ -1,8 +1,9 @@
--- create database pipeline;
--- use pipeline;
+create database pipeline;
+use pipeline;
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
+    nome varchar(255) not null,
 	email varchar(255) not null,
     senha varchar(255) not null
 );
@@ -19,9 +20,24 @@ create table negocio (
     tipo varchar(255) not null
 );
 
-ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` ) REFERENCES `usuarios` ( `id` );
+create table proposta
+(
+	id_proposta int(9) primary key not null auto_increment,
+    id_usuario int(9) not null,
+    nomeProjeto varchar(255) not null,
+    nome_cliente varchar(255) not null,
+    email_cliente varchar(255) not null,
+    nome_usuario varchar(255) not null,
+    email_usuario varchar(255) not null,
+    codigo longtext,
+    DMY datetime,
+    status_proposta varchar(255)
+); 
 
-insert into usuarios (email, senha) values ('email@contato.com', '123');
+ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` ) REFERENCES `usuarios` ( `id` );
+ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id` );
+
+insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
 
 -- select * from negocio where idUsuario = 1;
 -- update negocio set tipo = 'Contatado' where id = 1;

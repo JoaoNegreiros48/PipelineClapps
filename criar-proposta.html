@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/criar-proposta.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <title>criar proposta</title>
+</head>
+<body>
+    <div class="container">
+        <a href="./main.php" id="fechar">&#x2715</a>
+        <div class="criar-proposta">
+            <p id="title">Criar Proposta</p>
+
+            <span id="line"></span>
+            <form action="./assets/php/criarProposta.php" method="POST" id="form">
+                <p id="form-text">Nome do cliente</p>
+                <input id="email" type="text" placeholder="" name="nomeCliente" id="email">
+                <p id="form-text">E-mail do cliente</p>
+                <input id="email" type="text" placeholder="email@contato.com" name="emailCliente" id="email">
+                <p id="form-text">Nome do projeto</p>
+                <input id="email" type="text" placeholder="" name="nomeProjeto" id="email">
+                <button type="submit">Criar proposta</button>
+            </form>
+            <span id="line"></span>
+            <p id="help" style="color: black; opacity: 70%;">Está com alguma dúvida?</p>
+            <a href="cadastro.html"  id="help">Acesse o tutorial</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -237,3 +237,57 @@ body{
     }
   }
   
+
+/*  Proposta */
+
+table{
+    width: calc(100% - 160px);
+    height: auto;
+    max-height: 500px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 25px;
+    overflow: auto;
+    border-collapse: collapse;
+}
+tr{
+    max-height: 70px;
+    margin-bottom: 5px;
+}
+td{
+    height: 50px;
+}
+#linha{
+    opacity: 75%;
+    border: 1px solid #acaeb5;
+}
+#linha:hover{
+    opacity: 100%;
+    border-spacing: 5px;
+}
+.dropdown-content{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    z-index: 1;
+    background-color: white;
+    height: 80px;
+    width: 100px;
+    right: 100px;
+    border: 1px solid #acaeb5;
+    border-radius: 5px;
+}
+.dropdown-content a{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 800; 
+    color: #4E73DF;
+}
+.dropdown-content a:hover{
+    opacity: 75%;
+}
+.dropdown:hover .dropdown-content{
+    display: flex;
+}
