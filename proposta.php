@@ -93,7 +93,7 @@
             <div class="logo"></div>
             <a href="main.php" class="item">
                 <!-- <img src="./assets/img/p.png" alt=""> -->
-                <p>Proposta</p>
+                <p>Pipeline</p>
             </a>
             <a class="item">
                 <!-- <img src="./assets/img/p.png" alt=""> -->
