@@ -1,6 +1,17 @@
 <?php
+    include "../assets/php/conecta.php";
+    session_start();
+    $user = $_SESSION['id'];
+
+    $sql =  mysqli_query($conexao, "select * from usuarios where id = $user;");
+    while($linha = $sql->fetch_array()){
+        $nome = $linha['nome'];
+        $email = $linha['email'];
+    }
+
     $id = $_GET['page'];
     $type = $_GET['type'];
+
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +51,8 @@
                 <img src="./assets/imgs/pagina.png" alt="">
                 <p>Nome da página</p>
                 <div class="perfil">
-                    <img src="./assets/imgs/perfil.jpg" alt="">
-                    <p>Miguel Quinteiro</p>
+                    <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
+                    <p><?php echo $nome?></p>
                 </div>
                 <div class="notificacao"><img src="./assets/imgs/notificacao.png" alt=""></div>
             </div>

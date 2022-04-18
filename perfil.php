@@ -45,18 +45,18 @@
         </div>
     </div>
     <div class="container" id="container">
-        <div class="leftbar">
-            <div class="logo"></div>
+    <div class="leftbar">
+            <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
             <a href="main.php" class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <img src="./assets/img/icon-leads.png" alt="">
                 <p>Pipeline</p>
             </a>
             <a href="proposta.php" class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <img src="./assets/img/icon-proposta.png" alt="">
                 <p>Proposta</p>
             </a>
             <a href="landingpage.php" class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <img src="./assets/img/icon-landingpage.png" alt="">
                 <p>Landing Page</p>
             </a>
         </div>

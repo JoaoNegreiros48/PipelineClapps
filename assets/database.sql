@@ -1,5 +1,5 @@
-create database pipeline;
-use pipeline;
+-- create database pipeline;
+-- use pipeline;
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -47,7 +47,3 @@ ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` )
 ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id` );
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
-update usuarios set email = 'email@contato.com' where id = '1';
-
-select * from proposta;
--- update negocio set tipo = 'Contatado' where id = 1;

@@ -86,7 +86,7 @@
 
     <div id="modalEnviar" class="modal">
         <p>O link para sua proposta é:</p>
-        <?php echo 'localhost/moduloProposta/proposta-acessavel.php?id='. $id?>
+        <?php echo 'localhost/Clapps/proposta-acessavel.php?id='. $id?>
     </div>
 
     <div class="main">

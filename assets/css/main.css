@@ -126,6 +126,14 @@ body{
 .leftbar .logo{
     width: 100%;
     height: 55px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+}
+.leftbar .logo img{
+    /* width: 100%; */
+    height: 80px;
 }
 .leftbar .item{
     width: 100%;
@@ -135,7 +143,7 @@ body{
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border-top: 1px solid #272727;
+    /* border-top: 1px solid #272727; */
 }
 .leftbar .item img{
     height: 40px;

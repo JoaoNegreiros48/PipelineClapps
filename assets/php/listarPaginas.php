@@ -57,18 +57,18 @@
         </div>
     </div>
     <div class="container" id="container">
-        <div class="leftbar">
-            <div class="logo"></div>
+    <div class="leftbar">
+            <div class="logo"><img src="../img/logo.png" alt=""></div>
             <a href="../../main.php" class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <img src="../img/icon-leads.png" alt="">
                 <p>Pipeline</p>
             </a>
             <a href="../../proposta.php" class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <img src="../img/icon-proposta.png" alt="">
                 <p>Proposta</p>
             </a>
-            <a class="item">
-                <!-- <img src="./assets/img/p.png" alt=""> -->
+            <a href="../../landingpage.php" class="item">
+                <img src="../img/icon-landingpage.png" alt="">
                 <p>Landing Page</p>
             </a>
         </div>
@@ -94,8 +94,8 @@
                 <?php while($linha = $sql->fetch_array()){ ?>
                 <div class="pagina">
                     <p id="nomePagina"><?php echo $linha['nome']; ?></p>
-                    <a id="linkPagina" href="<?php echo "http://localhost/Clapps/assets/php/pagina.php?page=" . $linha['id'] . "&type=" . $linha['tipo']; ?>">Acessar página</a>
-                    <a href="<?php echo "http://localhost/Clapps/painelAdministrativo/?page=" . $linha['id'] . "&type=" . $linha['tipo']; ?>" id="btn-crm">Acessar CRM</a>
+                    <a id="linkPagina" target="_blank" href="<?php echo "http://localhost/Clapps/assets/php/pagina.php?page=" . $linha['id'] . "&type=" . $linha['tipo']; ?>">Acessar página</a>
+                    <a target="_blank" href="<?php echo "http://localhost/Clapps/painelAdministrativo/?page=" . $linha['id'] . "&type=" . $linha['tipo']; ?>" id="btn-crm">Acessar CRM</a>
                 </div>
                 <?php 
                 } 
