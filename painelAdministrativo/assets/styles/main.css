@@ -1,0 +1,174 @@
+.main{
+    width: calc(100% - 40px);
+    height: 100%;
+    float: right;
+    background-color: var(--bg);
+    padding: 30px;
+}
+.cardLine{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    height: auto;
+    margin: 0 30px 0 30px;
+}
+.cardOne{
+    height: 200px;
+    width: 40%;
+    background-color: var(--white);
+    margin: 0 15px 0 15px;
+    border-radius: 15px;
+    box-shadow: 0 0.1rem 0.7rem rgb(0 0 0 / 10%);
+}
+.cardOne .top{
+    height: 20%;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    flex-direction: column;
+}
+.cardOne .top .tittle{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    opacity: 80%;
+}
+.cardOne .top .valor{
+    margin-left: 15px;
+    margin-top: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    opacity: 60%;
+    margin-bottom: 0;
+}
+.cardOne .grafico{
+    margin-top: 0;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    border-radius: 15px;
+    box-shadow: 0 0.1rem 0.7rem rgb(0 0 0 / 10%);
+    
+}
+
+.data{
+    width: calc(100% - 30px);
+    height: auto;
+    margin-top: 25px;
+    margin-left: 45px;
+    display: flex;
+    flex-direction: row;
+}
+.data .left{
+    width: 70%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+.data .left .card{
+    height: 200px;
+    width: 158px;
+    margin-right: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0.1rem 0.7rem rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.data .left .card span{
+    margin-top: 15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+.data .left .card span img{
+    opacity: 80%;
+    height: 30px;
+}
+.data .left .card p{
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    margin-top: 20px;
+}
+.data .left .card #desc{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.data .right{
+    height: 300px;
+    width: 32%;
+    margin-left: 1px;
+    border-radius: 10px;
+    box-shadow: 0 0.1rem 0.7rem rgb(0 0 0 / 10%);
+    display: flex;
+    flex-direction: column;
+}
+.data .right p{
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 75%;
+    margin-top: 10px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 1024px){
+    .main{
+        margin-left: 0;
+        width: 100%;
+    }
+}
+@media (max-width: 1024px) and (orientation: portrait){
+    .cardLine{
+        flex-direction: column;
+        align-items: center;
+    }
+    .cardOne{
+        width: 90%;
+        margin-bottom: 15px;
+    }
+    .data{
+        flex-direction: column;
+    }
+    .data .left{
+        width: 100%;
+    }
+    .data .right{
+        margin-top: 15px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px){
+    .data .left{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    .data .left .card{
+        width: 80%;
+        height: 200px;
+        margin-bottom: 10px;
+    }
+    .data .right{
+        display: none;
+    }
+    .cardOne .grafico{
+        background-color: var(--white);
+        box-shadow: none;
+    }
+}

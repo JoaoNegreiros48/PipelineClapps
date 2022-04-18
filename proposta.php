@@ -99,6 +99,10 @@
                 <!-- <img src="./assets/img/p.png" alt=""> -->
                 <p>Proposta</p>
             </a>
+            <a href="landingpage.php" class="item">
+                <!-- <img src="./assets/img/p.png" alt=""> -->
+                <p>Landing Page</p>
+            </a>
         </div>
         
         <div style="display: flex; flex-direction: column; width: 100%" id="main">

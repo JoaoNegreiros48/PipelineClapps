@@ -1,0 +1,9 @@
+clock.png -- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+return.png -- <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+new.png -- <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+notificacao.png - <div>Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+analytics.png - <div>Icons made by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+pagina.png - <div>Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+homepng - <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+pointer.png - <div>Ícones feitos por <a href="https://www.flaticon.com/br/autores/vaadin" title="Vaadin">Vaadin</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div>
+

@@ -1,0 +1,181 @@
+.navbar{
+    height: 50px;
+    background-color: #13293D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    margin-top: 15px;
+}
+#linkPagina{
+    font-size: 14px;
+    font-weight: 700;
+    opacity: 75%;
+    text-decoration: none;
+    color: #1B98E0;
+    margin-left: 15px;
+}
+a{
+    text-decoration: none;
+    color: #1B98E0;
+}
+.dados{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+.key{
+    width: 240px;
+    height: 70px;
+    background-color: #F9F9F9;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 6px 13px -8px #3b3b3b; 
+    box-shadow: 0px 6px 13px -8px #3b3b3b;
+    margin-right: 5%;
+}
+.key #title{
+    margin-left: 5px;
+    font-size: 14px;
+    color: #929BA2;
+    font-weight: 700;
+    opacity: 95%;
+}
+
+.key #value{
+    margin-left: 5px;
+    font-size: 14px;
+    color: #334E5F;
+    font-weight: 700;
+    opacity: 95%;
+}
+
+.chart{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.grafico{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chartLine{
+    margin-top: 30px;
+    height: 80%;
+    width: 100%;
+    max-width: 948px;
+    max-height: 290px;
+
+    padding: 15px;
+
+    border-radius: 5px;
+
+    background-color: #F7F7F7;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chartLine #title{
+    font-size: 14px;
+    color: #102F41;
+    font-weight: 700;
+}
+
+.chartLine .menus{
+    display: flex;
+    flex-direction: row;
+}
+.chartLine .buttons{
+    margin-left: auto;
+    display: flex;
+}
+.chartLine .buttons .left{
+    width: 45px;
+    border-radius: 10px 0 0 10px;
+
+    background-color: #FFFFFF;
+    border: none; 
+    color: #516875;
+    height: 25px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+.chartLine .buttons .left:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
+.chartLine .buttons .right{
+    width: 45px;
+    border-radius: 0 10px 10px 0;
+
+    background-color: #FFFFFF;
+    border: none; 
+    color: #516875;
+    height: 25px;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+}
+.chartLine .buttons .right:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
+.chartLine .buttons .center{
+    width: 70px;
+    border-radius: 0;
+    border-left: 1px solid #506774;
+    border-right: 1px solid #506774;
+}
+.chartLine .buttons .center:hover{
+    opacity: 90%;
+    cursor: pointer;
+
+}
+.chartLine .chart{
+    height: 100%; 
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    position:static;
+}
+
+.btn-acesso{
+    width: 150px;
+    height: 50px;
+    background-color: #1B98E0;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: calc(100% - 280px);
+    float: right;
+}
+.btn-acesso a{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

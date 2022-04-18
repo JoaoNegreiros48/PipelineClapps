@@ -1,0 +1,86 @@
+:root {
+    --dark-grey: #9FABAE;
+    --light-grey: #DFE3E4;
+    --green: #1B98E0;
+}
+/* body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+} */
+.builder ul{
+    margin-top: 70px;
+    list-style: none;
+    display: flex;
+    width: 450px;
+    padding: 0;
+    font-size: 14px;
+}
+.builder ul li{
+    position: relative;
+    color: var(--dark-grey);
+    width: 25%;
+    text-align: center;
+}
+.builder ul li:before{
+    /* Alinhar tudo ao centro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* pega o numero do step HTML */
+    content: attr(data-step);
+
+    /* circulo */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    /* cores */
+    background-color: var(--light-grey);
+    color: #9FABAE;
+
+
+    /* posicionamento */
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 20px);
+    z-index: 99;
+}
+.builder ul li:after{
+    /* desenha o traço */
+    content: '';
+    width: 100%;
+    height: 5px;
+    background-color: var(--light-grey);
+
+    /* posiciona */
+    position: absolute;
+    top: -35px;
+    left: 0;
+}
+.builder ul li:after{
+    left: -50%;
+}
+.builder ul li:first-child::after{
+    width: 0;
+}
+
+/* colore a bolinha ativa */
+.builder ul li.active:before{
+    background-color: var(--green);
+    color: #fff;
+}
+
+/* colore a linha ativa */
+.builder ul li.active:after{
+    background-color: var(--green);
+}
+
+/* colore o texto do item */
+.builder ul li.active{
+    color: var(--green);
+}

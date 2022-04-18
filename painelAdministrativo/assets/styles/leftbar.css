@@ -1,0 +1,55 @@
+.leftbar{
+    height: 100vh;
+    width: 20%;
+    background-color: var(--white);
+    position: fixed;
+    border-right: 1px solid var(--border);
+    float: left;
+    margin-right: 1px;
+    background-color: #FDFEFE;
+}
+.logo{
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid var(--border);
+}
+.leftbar .menus{
+    width: 100%;
+    height: auto;
+}
+#tt{
+    padding: 10px 20px;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    color: #6e768e;
+    font-weight: 600;
+}
+.leftbar .menus .menu{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+}
+.leftbar .menus .menu img{
+    width: 20px;
+    height: 20px;
+    margin-left: 30px;
+}
+.leftbar .menus .menu p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #00acc1;
+    margin-left: 5px;
+}
+
+@media (max-width: 1024px){
+    .leftbar{
+        display: none;
+    }
+}

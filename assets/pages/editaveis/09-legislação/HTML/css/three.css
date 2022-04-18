@@ -1,0 +1,50 @@
+/* Theme */
+#switcher .theme-click {
+	background-color: #0798bc;
+}
+/* Buttons*/
+.le-nav-btn {
+	background-color:  #0798bc;
+}
+.btn-primary {
+	background-color: #0798bc;
+}
+.btn-white-primary {
+	color: #0798bc;
+}
+/* Blog */
+.le-blog:hover .le-blog-category {
+	background-color:  #0798bc;
+}
+/* About Icons */
+.le-about-content ul>li .fa {
+	color: #0798bc;
+}
+/* Price Table */
+.le-price-popular {
+	background-color: #0798bc;
+}
+/* Icon color */
+.le-icontext .le-icon,.navbar-default.le-primary-navbar .navbar-nav>li>a:hover,.navbar-default.le-primary-navbar .navbar-nav>li>a:focus {
+	color: #0798bc;
+}
+
+.le-primary{
+    color: #0798bc;
+}
+
+.le-section-heading .le-primary {
+    color: #0798bc;
+}
+
+.le-subscribe-content h2{
+    color: #0798bc;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #0798bc;
+}
+
+.le-chevorn{
+    background: #0798bc;
+}

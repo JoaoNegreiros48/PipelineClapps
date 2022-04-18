@@ -34,11 +34,20 @@ create table proposta
     status_proposta varchar(255)
 ); 
 
+create table pagina(
+	id int(9) auto_increment primary key not null,
+    nome varchar(255) not null,
+    idUsuario int(9) not null,
+    codigo LONGTEXT not null,
+    tipo varchar(255),
+    FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
+);
+
 ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` ) REFERENCES `usuarios` ( `id` );
 ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id` );
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
 update usuarios set email = 'email@contato.com' where id = '1';
 
-select * from usuarios;
+select * from proposta;
 -- update negocio set tipo = 'Contatado' where id = 1;

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modulo | LP</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/landingpages.css">
+    <link rel="stylesheet" href="../css/barraDeProgresso.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar"></div>
+        <ul class="progressbar">
+            <li class="active" data-step="1">Início</li>
+            <li class="active" data-step="2">Escolher página</li>
+            <li  data-step="3">Editar</li>
+            <li  data-step="4">Publicar</li>
+        </ul>
+        <div class="conteudo">
+            <div class="lp">
+                <div class="item" style="background-image: url('../imgs/preview/ebook.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Lançar ebook</p>
+                        <button onclick="visualizar('../LP/01-ebook/HTML/index.html')">Visualizar</button>
+                        <button onclick="escolher('../pages/editaveis/01-ebook/HTML/index.php')">Escolher</button>
+                    </div>
+                </div>
+                
+                <div class="item" style="background-image: url('../imgs/preview/educação.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Lançar seu curso</p>
+                        <button onclick="visualizar('../LP/04-educação/HTML/index.html')">Visualizar</button>
+                        <button onclick="escolher('../pages/editaveis/04-educação/HTML/index.php')">Escolher</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/evento.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Faça seu evento</p>
+                        <button onclick="visualizar('../LP/12-evento/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="item" style="background-image: url('../imgs/preview/finança.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Serviço financeiro</p>
+                        <button onclick="visualizar('../LP/08-finança/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+                
+                <div class="item" style="background-image: url('../imgs/preview/imovel.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Corretagem imobiliária</p>
+                        <button onclick="visualizar('../LP/10-imovel/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/legislação.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Firma de advocacia</p>
+                        <button onclick="visualizar('../LP/09-legislação/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/produtodigital.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Marketing digital</p>
+                        <button onclick="visualizar('../LP/11-produtodigital/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/saude.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Portifólio coach</p>
+                        <button onclick="visualizar('../LP/07-saude/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/seo.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao">Analie SEO</p>
+                        <button onclick="visualizar('../LP/02-seo/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/startup.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/05-startup/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/webbyte.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/03-webbyte/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/zenderapp.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/06-zenderapp/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/criativa.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/18-criativa/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/encapsulado.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/14-encapsulado/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/medicina.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/19-medicina/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/saas.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/20-saas/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/restaurante.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/17-restaurante/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/propriedade.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/13-propriedade/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/58-cursoparauniversidade.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/58-cursoparauniversidade/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/segurança.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/16-segurança/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+
+                <div class="item" style="background-image: url('../imgs/preview/21-confeitaria.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/21-confeitaria/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/22-construção.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/22-construção/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/23-palestra.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/23-palestra/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/24-serviços.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/24-serviços/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/25-ebook.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/25-ebook/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/26-software.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/26-software/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/27-conferencia.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/27-conferência/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>    
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/28-aventura.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/28-aventura/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/29-geraçãodeleads.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/29-geraçãodeleads/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/30-showcase.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/30-showcase/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/31-academia.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/31-academia/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/32-supercaptaçãodeleads.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/32-supercaptaçãodeleads/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/33-marketing.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/33-marketing/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/34-automóvel.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/34-automóvel/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/35-moda.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/35-moda/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/36-recrutamento.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/36-recrutamento/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/37-spa.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/37-spa/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/38-aplicativo.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/38-aplicativo/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/39-hotel.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/39-hotel/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/40-advogado.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/40-advogado/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/41-yoga.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/41-yoga/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/42-fitness.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/42-fitness/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/43-logistica.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/43-logistica/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/44-spa.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/44-spa/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/45-vendedor.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/45-vendedor/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/46-coach.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/46-coach/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/47-multiuso.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/47-multiuso/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/48-turismo.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/48-turismo/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/49-agência.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/49-agência/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url('../imgs/preview/50-empresa.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/50-empresa/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/51-animais.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/51-animais/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/produto.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/15-produto/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/52-EAD.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/52-EAD/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/53-medicina.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/53-medicina/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/54-corretor.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/54-corretor/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/55-celulares.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/55-celulares/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/56-universidade.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/56-universidade/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/57-instrutor.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/57-instrutor/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/59-educação.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/59-educação/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/60-drop.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/60-drop/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/61-multiuso2.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/61-multiuso2/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/62-casadefesta.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/62-casadefesta/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/63-escritório.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/63-escritório/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/64-bitcoin.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/64-bitcoin/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/65-startupdigital.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/65-startupdigital/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/66-hospedagemdesites.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/66-hospedagemdesites/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/67-tutoronline.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/67-tutoronline/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/68-cerimônia.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/68-cerimônia/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/69-terapia.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/69-terapia/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/70-multiuso3.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/70-multiuso3/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/71-cartãodevisitavirtual.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/71-cartãodevisitavirtual/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/72-drone.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/72-drone/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/73-produtounico.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/73-produtounico/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/74-ecommerce.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/74-ecommerce/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/75-monetizze.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/75-monetizze/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/76-alimentação.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/76-alimentação/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/77-hotmart.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/77-hotmart/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/78-youtube.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/78-youtube/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/79-paginaparaafiliados.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/79-paginaparaafiliados/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/80-downloaddeprodutodigital.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/80-downloaddeprodutodigital/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+
+
+                <div class="item" style="background-image: url('../imgs/preview/81-importador.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/81-importador/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/82-multiuso4.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/82-multiuso4/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/83-chás.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/83-chás/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/84-appdefinanças.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/84-appdefinanças/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/85-MMN.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/85-MMN/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/86-campanhas.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/86-campanhas/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/87-psicologia.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/87-psicologia/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/88-educaçãofísica.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/88-educaçãofísica/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/89-camisas.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/89-camisas/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+    
+                <div class="item" style="background-image: url('../imgs/preview/90-multiuso5.png');background-repeat: no-repeat;background-position-x: auto;background-position-y: center;background-size: 100%;"> 
+                    <div class="ferramentas">
+                        <p class="definicao"></p>
+                        <button onclick="visualizar('../LP/90-multiuso5/HTML/index.html')">Visualizar</button>
+                        <button onclick="">Escolher</button>
+                    </div>
+                    
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function visualizar(link){
+            let url = link
+            window.location.replace(url)
+        }
+        function escolher(lp){
+            let url = lp
+            window.location.replace(url)
+        }
+    </script>
+</body>
+</html>

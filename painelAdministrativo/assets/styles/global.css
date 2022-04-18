@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+.right{
+    width: 80%;
+    float: right;
+    margin-left: 20%;
+}
+:root{
+    --white: #FFFFFF;
+    --bg: #F6F6F6;
+    --border: #E4E4E4;
+}
+
+@media (max-width: 1024px){
+    .right{
+        margin-left: 0;
+        width: 100%;
+    }
+}
