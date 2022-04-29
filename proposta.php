@@ -46,7 +46,11 @@
     </div>
     <div class="container" id="container">
     <div class="leftbar">
-            <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
+            <!-- <div class="logo"><img src="./assets/img/logo-minify.png" alt=""> <p>Clapps</p></div> -->
+            <a class="item">
+                <img src="./assets/img/logo-minify.png" alt="" style="margin-right: 0; width: 40px; height: 40px;">
+                <img src="./assets/img/logo-extends.png" alt="">
+            </a>
             <a href="main.php" class="item">
                 <img src="./assets/img/icon-leads.png" alt="">
                 <p>Pipeline</p>
@@ -81,14 +85,23 @@
                     <td>Nome do projeto</td>
                     <td>Nome do cliente</td>
                     <td>Data</td>
-                    <td>Status</td>
+                    <td style="width: 150px;">Status</td>
                 </tr>
                 <?php while($linha = $sql->fetch_array()){?>
                 <tr id="linha">
+                    <?php
+                        if($linha['status_proposta'] == "Aceita"){
+                            $status = 'aceita';
+                        } else if($linha['status_proposta'] == "Recusada"){
+                            $status = 'recusada';
+                        } else if($linha['status_proposta'] == "Pendente"){
+                            $status = 'pendente';
+                        }
+                    ?>
                     <td><?php echo $linha['nomeProjeto']; ?></td>
                     <td><?php echo $linha['nome_cliente']; ?></td>
                     <td><?php echo formatarData($linha['DMY'])?></td>
-                    <td><?php echo $linha['status_proposta']; ?></td>
+                    <td id="<?php echo $status; ?>" style="text-transform: uppercase;"><?php echo $linha['status_proposta']; ?></td>
                     <td class="dropdown"><p id="seta">▼</p>
                         <span class="dropdown-content">
                             <a href="proposta-acessavel.php?id=<?php echo $linha['id_proposta']; ?>">Acessar</a>

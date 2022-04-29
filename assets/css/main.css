@@ -123,18 +123,6 @@ body{
     height: 100%;
     background-color: #4E73DF;
 }
-.leftbar .logo{
-    width: 100%;
-    height: 55px;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-}
-.leftbar .logo img{
-    /* width: 100%; */
-    height: 80px;
-}
 .leftbar .item{
     width: 100%;
     height: 55px;
@@ -146,9 +134,12 @@ body{
     /* border-top: 1px solid #272727; */
 }
 .leftbar .item img{
-    height: 40px;
+    height: 35px;
 }
 .leftbar .item p{
+    display: none;
+}
+.leftbar .item img:last-child{
     display: none;
 }
 .leftbar:hover{
@@ -169,6 +160,10 @@ body{
     display: initial;
     font-weight: 700;
     color: #EAECF4;
+    opacity: 95%;
+}
+.leftbar:hover .item img:last-child{
+    display: initial;
     opacity: 95%;
 }
 .main{
@@ -281,13 +276,13 @@ td{
     height: 50px;
 }
 #linha{
-    opacity: 75%;
+    opacity: 100%;
     border: 1px solid #acaeb5;
 }
-#linha:hover{
+/* #linha:hover{
     opacity: 100%;
     border-spacing: 5px;
-}
+} */
 .dropdown-content{
     margin-top: auto;
     position: absolute;
@@ -313,4 +308,49 @@ td{
 }
 .dropdown:hover .dropdown-content{
     display: flex;
+}
+#aceita{
+    height: 35px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    margin-top: 8px;
+    background-color: #22ECAC;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: 3px solid #0ACD8F;
+}
+#recusada{
+    height: 35px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    margin-top: 8px;
+    background-color: #EB2348;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: 3px solid #BE1536;
+}
+#pendente{
+    height: 35px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    margin-top: 8px;
+    background-color: #A223EA;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: 3px solid #8821C6;
 }

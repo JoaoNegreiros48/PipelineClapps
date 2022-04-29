@@ -125,7 +125,10 @@
     </div>
     <div class="container" id="container">
     <div class="leftbar">
-            <div class="logo"><img src="./assets/img/logo.png" alt=""></div>
+            <a class="item">
+                <img src="./assets/img/logo-minify.png" alt="" style="margin-right: 0; width: 40px; height: 40px;">
+                <img src="./assets/img/logo-extends.png" alt="">
+            </a>
             <a href="main.php" class="item">
                 <img src="./assets/img/icon-leads.png" alt="">
                 <p>Pipeline</p>
