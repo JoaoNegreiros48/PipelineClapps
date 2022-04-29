@@ -2,7 +2,7 @@
     include './assets/php/conecta.php';
     session_start();
     $id = $_GET['id'];
-    $_SESSION['id_pagina'] = $id;
+    $_SESSION['id_proposta'] = $id;
     $sql =  mysqli_query($conexao, "select * from proposta where id_proposta = '$id';");
     while($linha = $sql->fetch_array()){
         $codigo = $linha['codigo'];
@@ -31,21 +31,40 @@
             align-items: center;
             justify-content: center;
         }
+        .btn{
+            height: 35px;
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 35px;
+            margin-top: 8px;
+            background-color: #22ECAC;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 3px solid #0ACD8F;
+            text-transform: uppercase;
+        }
+        .topo{
+            display: flex;
+            flex-direction: row;
+        }
     </style>
 
     <title>Proposta</title>
 </head>
 <body>
     <div class="container">
-        <div class="topo">
-            <button onclick="alterarStatus('Aceita')" id="bnt">Aceitar</button>
-            <button onclick="alterarStatus('Recusada')" id="bnt" style="border: 1px solid #CCD0D2; background-color:#EAECF4; color: #34373C">Recusar</button>
-        </div>
         <div class="proposta">
             <?php echo $codigo?>
         </div>
+        <div class="topo">
+            <button onclick="alterarStatus('Aceita')" class="btn" id="btn">Aceitar</button>
+            <button onclick="alterarStatus('Recusada')" class="btn" id="btn" style="background-color: #EB2348;border-bottom: 3px solid #BE1536;">Recusar</button>
+        </div>
     </div>
-
     <script>
             function alterarStatus(status){
                 $.ajax({
