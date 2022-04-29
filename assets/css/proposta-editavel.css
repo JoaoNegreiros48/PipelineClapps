@@ -115,7 +115,6 @@
     flex-direction: column;
 }
 .topo .botoes{
-    background-color: #13293D;
     width: 100%;
     height: 40px;
     display: flex;
@@ -140,23 +139,43 @@
     margin-left: 10px;
 }
 .topo #bnt-salvar{
-    /* margin-left: auto; */
-    /* margin-right: 80px; */
-    float: right;
-    height: 30px;
-    width: 120px;
-    background-color: #4E73E3;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 14px;
+    height: 35px;
+    width: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 8px;
+    background-color: #23EBAC;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid #0ACD8F;
+    margin-left: 10px;
     cursor: pointer;
 }
 .topo #bnt-salvar:hover{
-    opacity: 91%;
+    opacity: 90%;
+}
+.topo #bnt-enviar{
+    height: 35px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 35px;
+    margin-top: 8px;
+    background-color: #A223EA;
+    font-weight: 700;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    border-bottom: 3px solid #8821C6;
+    margin-left: 10px;
+}
+.topo #bnt-enviar:hover{
+    opacity: 90%;
 }
 #txt-tuto{
     margin-top: 25px;

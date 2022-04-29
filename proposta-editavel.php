@@ -140,8 +140,8 @@
             <div class="editor" id="editor" style="flex-direction: column;">
                 <div class="topo">
                     <div class="botoes">
-                        <button onclick="salvar()" id="bnt-salvar" style="margin-right: 20px">Salvar</button>
-                        <a href="#modalEnviar" rel='modal:open' id="bnt-salvar">Enviar</a>
+                        <a onclick="salvar()" id="bnt-salvar">Salvar</a>
+                        <a href="#modalEnviar" rel='modal:open' id="bnt-enviar">Enviar</a>
                         <!-- <a href="./main.php" id="bnt-salvar" style="margin-left: 15px; background-color:#EBEDF4; border: 1px solid #CCD0D2; color: black">Voltar</a> -->
                     </div>
                     <div class="diretorio" style="margin-left: 0; margin-top: 10px"><p style="font-weight: 800; color: #4E73DF;">Proposta</p> / <p style="font-weight: 800; color: #4E73DF;">Criar proposta</p> / <p style="color: #858796;">Editar proposta</p></div>
