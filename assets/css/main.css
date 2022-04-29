@@ -203,15 +203,17 @@ body{
     margin-right: 80px;
     float: right;
     height: 40px;
-    width: 120px;
-    background-color: #4E73E3;
+    width: 200px;
+    background-color: #22C4EB;
     border: none;
+    border-bottom: 3px solid #139CC9;
     border-radius: 5px;
     color: white;
     font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
 }
 .topo #criar-proposta:hover{
     opacity: 91%;

@@ -72,7 +72,7 @@
             <div class="main">
                 <div class="topo">
                     <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="color: #858796;">Meus negócios</p></div>
-                    <a href="./criar-negocio.html" id="criar-proposta">Criar negócio</a>
+                    <a href="./criar-negocio.html" id="criar-proposta">CRIAR NEGÓCIO</a>
                 </div>
                 <div class="pipeline">
                     <div class="guia">

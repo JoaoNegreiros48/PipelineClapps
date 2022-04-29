@@ -1,47 +1,3 @@
-<!-- <?php
-    // include './assets/php/conecta.php';
-    // session_start();
-
-    // if(!$_SESSION['autenticado']){
-    //     header('url: ./index.html');
-    // }
-    // $id = $_SESSION['id'];
-    // $sql =  mysqli_query($conexao, "select * from proposta where id_usuario = '$id'");
-?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="./assets/css/main.css">
-    <link rel="stylesheet" href="./assets/css/global.css">
-
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
-    
-    <title>Main</title>
-</head>
-<body>
-    <div class="container">
-        <div class="navbar"></div>
-        <div class="leftbar"></div>
-        <div class="main">
-            <div class="topo">
-                <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Propostas</p> / <p style="color: #858796;">Minhas propostas</p></div>
-                <a href="./criar-proposta.html" id="criar-proposta">Criar proposta</a>
-            </div>
-            
-        </div>
-    </div>
-</body>
-</html> -->
-
 <?php 
     include "./assets/php/conecta.php";
     session_start();
@@ -118,7 +74,7 @@
             <div class="main">
                 <div class="topo">
                     <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Proposta</p> / <p style="color: #858796;">Minhas propostas</p></div>
-                    <a href="./criar-proposta.html" id="criar-proposta">Criar proposta</a>
+                    <a href="./criar-proposta.html" id="criar-proposta">CRIAR PROPOSTA</a>
                 </div>
                 <table>
                 <tr>

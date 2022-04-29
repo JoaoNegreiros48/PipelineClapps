@@ -87,7 +87,7 @@
                 <div class="topo">
                     <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Landing Page</p> / <p style="color: #858796;">Minhas páginas</p></div>
                     <!-- <a href="./criar-negocio.html" >Criar negócio</a> -->
-                    <a id="criar-proposta" href="#ex1" rel="modal:open">Criar landing page</a>
+                    <a id="criar-proposta" href="#ex1" rel="modal:open">CRIAR LANDING PAGE</a>
                 </div>
                 <div class="conteudo">
             

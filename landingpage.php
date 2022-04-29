@@ -153,7 +153,7 @@
             <div class="main">
                 <div class="topo">
                     <div class="diretorio"><p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="color: #858796;">Meus negócios</p></div>
-                    <a href="#modal" id="criar-proposta" rel="modal:open">Criar landing page</a>
+                    <a href="#modal" id="criar-proposta" rel="modal:open">CRIAR LANDING PAGE</a>
                 </div>
                 <div class="conteudo">
                     <p class="message-inicial">Aparentemente você ainda não têm uma Landing page, não perca tempo, clique no botão e faça um test drive</p>
