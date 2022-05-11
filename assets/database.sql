@@ -1,5 +1,5 @@
 -- create database pipeline;
--- use pipeline;
+use pipeline;
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -18,6 +18,23 @@ create table negocio (
     telefone varchar(255) not null,
     dataNegocio varchar(255) not null,
     tipo varchar(255) not null
+);
+
+create table observacao (
+	id int(9) primary key not null auto_increment,
+    id_negocio int(9) not null,
+    observacao varchar(255),
+	FOREIGN KEY (id_negocio) REFERENCES negocio(id)
+);
+
+create table atividade (
+	id int(9) primary key not null auto_increment,
+    id_usuario int(9) not null,
+    descricao varchar(255),
+    dataAtividade date,
+    responsavel varchar(255),
+    status varchar(255),
+	FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 create table proposta
@@ -47,3 +64,5 @@ ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` )
 ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id` );
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
+
+select * from proposta;
