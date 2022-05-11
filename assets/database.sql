@@ -24,19 +24,20 @@ create table observacao (
 	id int(9) primary key not null auto_increment,
     id_negocio int(9) not null,
     observacao varchar(255),
+    criacao date,
 	FOREIGN KEY (id_negocio) REFERENCES negocio(id)
 );
 
 create table atividade (
 	id int(9) primary key not null auto_increment,
-    id_usuario int(9) not null,
+    id_negocio int(9) not null,
     descricao varchar(255),
     dataAtividade date,
     responsavel varchar(255),
     status varchar(255),
-	FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+	FOREIGN KEY (id_negocio) REFERENCES usuarios(id)
 );
-
+select * from atividade;
 create table proposta
 (
 	id_proposta int(9) primary key not null auto_increment,

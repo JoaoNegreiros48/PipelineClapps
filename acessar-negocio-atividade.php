@@ -116,26 +116,52 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
                             </form>
                     </div>
                     <div class="direita">
-                            <div class="superior">
-                                <div class="barra-de-navegacao">
-                                    <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;">Observação</a>
-                                    <a class="item" href="./acessar-negocio-atividade.php?id=<?php echo $id_negocio ?>">Atividade</a>
+                        <div class="superior" style="height: 250px">
+                            <div class="barra-de-navegacao">
+                                <a class="item" href="./acessar-negocio.php?id=<?php echo $id_negocio ?>">Observação</a>
+                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;">Atividade</a>
+                            </div>
+                            <div class="menuAtividade">
+                                <div>
+                                    <p id="form-text">Descrição</p>
+                                    <input type="text" id="descricao">
+                                    <p id="form-text">Responsável</p>
+                                    <input type="text" id="responsavel">
                                 </div>
-                                <div class="menu">
-                                    <textarea name="" id="observacao" cols="30" rows="8"></textarea>
-                                    <button id="aceita" style="margin-right: 10px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
+                                <div>
+                                    <p id="form-text">Prazo</p>
+                                    <input type="date" id="prazo">
+                                    <button id="aceita" style="margin-top: 30px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
                                 </div>
                             </div>
-                            <div class="linhadotempo">
-                                <?php 
-                                    $sql =  mysqli_query($conexao, "select * from observacao where id_negocio = $id_negocio;");
-                                    while ($linha = $sql->fetch_array()) { ?>
-                                <div class="item">
-                                    <p id="data"><?php echo formatarData2($linha['criacao'])?></p>
-                                    <p id="obs"><?php echo $linha['observacao']?></p>
+                        </div>
+                        <div class="linhadotempo">
+                            <?php 
+                                $sql =  mysqli_query($conexao, "select * from atividade where id_negocio = $id_negocio;");
+                                while ($linha = $sql->fetch_array()) { ?>
+                            <div class="item" style="background-color: white; width: 98%; display: flex; flex-direction: row; justify-content: space-around;">
+                                <div>
+                                    <p id="form-text">Descrição</p>
+                                    <input type="text" id="descricao" disabled="" value="<?php echo $linha['descricao']?>">
+                                    <p id="form-text">Responsável</p>
+                                    <input type="text" id="responsavel" disabled="" value="<?php echo $linha['responsavel']?>">
                                 </div>
-                                <?php }?>
+                                <div>
+                                    <p id="form-text">Prazo</p>
+                                    <input type="date" id="prazo" disabled="" value="<?php echo $linha['dataAtividade']?>">
+                                    <?php 
+                                        if($linha['status'] == "Marcar como realizada"){
+                                            $style = "recusada";
+                                        }else if ($linha['status'] == "Realizada"){
+                                            $style = "aceita";
+                                        }
+                                    ?>
+                                    <button id="<?php echo $style?>" style="margin-top: 30px;" onclick="realizarTarefa( <?php echo $linha['id']?>)"><?php echo $linha['status']?></button>
+                                </div>
                             </div>
+                            <?php }?>
+
+                        </div>
                     </div>
                 </div>
             </div>
@@ -144,30 +170,51 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function adicionarObservacao(idnegocio){
-            observacao = document.getElementById('observacao').value;
-            
+        function adicionarObservacao(idnegocio) {
+            descricao = document.getElementById('descricao').value;
+            responsavel = document.getElementById('responsavel').value;
+            prazo = document.getElementById('prazo').value;
+
             $.ajax({
-                url: './assets/php/adicionarObservacao.php',
-                data: {observacao: observacao, idnegocio: idnegocio},
+                url: './assets/php/adicionarAtividade.php',
+                data: {
+                    descricao: descricao,
+                    responsavel: responsavel,
+                    prazo: prazo,
+                    idnegocio: idnegocio
+                },
                 type: 'POST',
-            }).done(function(result){
+            }).done(function(result) {
                 document.location.reload(true);
             });
         }
-        function abrirPerfil(){
+
+        function realizarTarefa(idAtividade) {
+            $.ajax({
+                url: './assets/php/realizarTarefa.php',
+                data: {
+                    idAtividade: idAtividade,
+                },
+                type: 'POST',
+            }).done(function(result) {
+                document.location.reload(true);
+            });
+        }
+
+        function abrirPerfil() {
             document.getElementById('perfil-active').style = "display: flex; z-index: 2; position: fixed;"
             document.getElementById('container').style = "opacity: 50%;"
-            setTimeout(function(){
+            setTimeout(function() {
                 document.getElementById('container').setAttribute('onclick', "fecharPerfil()")
-            },100);
-            
+            }, 100);
+
         }
-        function fecharPerfil(){
+
+        function fecharPerfil() {
             document.getElementById('perfil-active').style = "display: none;"
             document.getElementById('container').style = "opacity: 100%;"
             document.getElementById('container').setAttribute('onclick', "")
-        } 
+        }
     </script>
 </body>
 
