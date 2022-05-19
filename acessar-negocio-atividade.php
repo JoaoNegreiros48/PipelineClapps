@@ -10,13 +10,13 @@ while ($linha = $sql->fetch_array()) {
 }
 
 $id_negocio = $_GET['id'];
-$sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
+$sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 while ($linha = $sql->fetch_array()) {
     $nomeProjeto = $linha['nomeProjeto'];
     $idProjeto = $linha['id'];
 }
 $id_negocio = $_GET['id'];
-$sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
+$sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 ?>
 
 <!DOCTYPE html>
@@ -131,7 +131,7 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
                                 <div>
                                     <p id="form-text">Prazo</p>
                                     <input type="date" id="prazo">
-                                    <button id="aceita" style="margin-top: 30px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
+                                    <button id="aceita" style="margin-top: 30px;" onclick="adicionarAtividade(<?php echo $idProjeto ?>)">Publicar</button>
                                 </div>
                             </div>
                         </div>
@@ -170,11 +170,13 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function adicionarObservacao(idnegocio) {
+        function adicionarAtividade(idnegocio) {
             descricao = document.getElementById('descricao').value;
             responsavel = document.getElementById('responsavel').value;
             prazo = document.getElementById('prazo').value;
 
+            console.log(descricao, responsavel, prazo, idnegocio)
+            
             $.ajax({
                 url: './assets/php/adicionarAtividade.php',
                 data: {

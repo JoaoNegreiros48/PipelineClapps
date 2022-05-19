@@ -10,13 +10,13 @@ while ($linha = $sql->fetch_array()) {
 }
 
 $id_negocio = $_GET['id'];
-$sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
+$sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 while ($linha = $sql->fetch_array()) {
     $nomeProjeto = $linha['nomeProjeto'];
     $idProjeto = $linha['id'];
 }
 $id_negocio = $_GET['id'];
-$sql =  mysqli_query($conexao, "select * from negocio where id = $id;");
+$sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 ?>
 
 <!DOCTYPE html>
