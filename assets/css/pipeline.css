@@ -25,6 +25,8 @@
     font-weight: 700;
     opacity: 75%;
     margin-left: 10px;
+    max-width: 90%;
+    max-height: 40px;
 }
 .dropzone{
     width: 100%;
