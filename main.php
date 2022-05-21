@@ -68,6 +68,7 @@ while ($linha = $sql->fetch_array()) {
                 <img src="./assets/img/icon-landingpage.png" alt="">
                 <p>Landing Page</p>
             </a>
+            
         </div>
 
         <div style="display: flex; flex-direction: column; width: 100%" id="main">
