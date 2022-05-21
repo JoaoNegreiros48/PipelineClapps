@@ -1,11 +1,17 @@
--- create database pipeline;
+create database pipeline;
 use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
     nome varchar(255) not null,
 	email varchar(255) not null,
-    senha varchar(255) not null
+    senha varchar(255) not null,
+    pipeline_menu_1 varchar(255) DEFAULT "Qualificado",
+    pipeline_menu_2 varchar(255) DEFAULT "Contatado",
+    pipeline_menu_3 varchar(255) DEFAULT "Apresentado",
+    pipeline_menu_4 varchar(255) DEFAULT "Proposta feita",
+    pipeline_menu_5 varchar(255) DEFAULT "Sob contrato",
+    pipeline_menu_6 varchar(255) DEFAULT "Proposta rejeitada"
 );
 
 create table negocio (
@@ -67,4 +73,4 @@ ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
 
 select * from atividade; 
-select * from negocio;
+select * from usuarios;

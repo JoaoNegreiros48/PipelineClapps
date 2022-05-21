@@ -10,7 +10,7 @@
     $data = mysqli_real_escape_string($conexao, $_POST['data']);
     $id = $_SESSION['id'];
 
-    $sql =  mysqli_query($conexao, "insert into negocio (idUsuario, emailCliente, nomeCliente, nomeProjeto, valor, telefone, dataNegocio, tipo) values (1, '$emailCliente', '$nomeCliente', '$nomeProjeto', '$valor', '$telefone', '$data', 'Qualificado');");
+    $sql =  mysqli_query($conexao, "insert into negocio (idUsuario, emailCliente, nomeCliente, nomeProjeto, valor, telefone, dataNegocio, tipo) values (1, '$emailCliente', '$nomeCliente', '$nomeProjeto', '$valor', '$telefone', '$data', 'menu1');");
 
 
     if($sql){
