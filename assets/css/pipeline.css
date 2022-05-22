@@ -5,10 +5,12 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: #ececec;
+    padding: 5px;
 }
 .guia{
     max-height: 100%;
-    width: 15%;
+    width: 16%;
 }
 .guia .titulo{
     width: 100%;
@@ -28,6 +30,13 @@
     max-width: 90%;
     max-height: 40px;
 }
+.pipeline .line{
+    height: 100%;
+    width: 1px;
+    display: block;
+    background-color:#C0C0C0;
+    margin-top: 65px;
+}
 .dropzone{
     width: 100%;
     height: 600px;
@@ -38,7 +47,7 @@
 .card{
     width: 100%;
     height: 60px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;

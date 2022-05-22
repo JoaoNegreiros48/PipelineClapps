@@ -105,6 +105,7 @@ while ($linha = $sql->fetch_array()) {
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #9B51E0;">
                             <p contentEditable="true" id="kanban2"><?php echo $menu2 ?></p>
@@ -121,6 +122,7 @@ while ($linha = $sql->fetch_array()) {
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="line"></span>  
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #30D46F;">
                             <p contentEditable="true" id="kanban3"><?php echo $menu3 ?></p>
@@ -137,6 +139,7 @@ while ($linha = $sql->fetch_array()) {
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #D69108;">
                             <p contentEditable="true" id="kanban4"><?php echo $menu4 ?></p>
@@ -153,6 +156,7 @@ while ($linha = $sql->fetch_array()) {
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #42E2CF;">
                             <p contentEditable="true" id="kanban5"><?php echo $menu5 ?></p>
@@ -169,6 +173,7 @@ while ($linha = $sql->fetch_array()) {
                             <?php } ?>
                         </div>
                     </div>
+                    <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #E14A39;">
                             <p contentEditable="true" id="kanban6"><?php echo $menu6 ?></p>
