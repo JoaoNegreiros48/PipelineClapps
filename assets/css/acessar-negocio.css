@@ -58,6 +58,16 @@
 .funcionalidades .esquerda form{
     width: 80%;
 }
+.funcionalidades .esquerda form button{
+    height: 35px;
+    width: 100%;
+    margin-top: 15px;
+    background-color: #4D72DF;
+    border: 1px solid #4D72DF;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
 .funcionalidades .esquerda #form-text{
     font-size: 14px;
     font-weight: 800;

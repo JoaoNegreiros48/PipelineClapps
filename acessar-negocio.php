@@ -99,21 +99,23 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                 <div class="funcionalidades">
                     <div class="esquerda">
                         <?php while ($linha = $sql->fetch_array()) { ?>
-                            <form action="./assets/php/criarNegocio.php" method="POST" id="form">
+                            <form action="./assets/php/alterarInfo.php" method="POST" id="form">
                                 <p id="form-text">Nome do cliente</p>
-                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email" disabled="" value="<?php echo $linha['nomeCliente']; ?>">
+                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email"  value="<?php echo $linha['nomeCliente']; ?>">
                                 <p id="form-text">E-mail do cliente</p>
-                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>" disabled="" name="emailCliente" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>"  name="emailCliente" id="email">
                                 <p id="form-text">Telefone</p>
-                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>" disabled="" name="telefone" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>"  name="telefone" id="email">
 
                                 <p id="form-text">Nome do projeto</p>
-                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>" disabled="" name="nomeProjeto" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>"  name="nomeProjeto" id="email">
                                 <p id="form-text">Valor</p>
-                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>" disabled="" name="valor" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>"  name="valor" id="email">
                                 <p id="form-text">Data de fechamento esperada</p>
-                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email" disabled="">
+                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email" >
+                                
                             <?php } ?>
+                            <br><button type="submit">Salvar alterações</button>
                             </form>
                     </div>
                     <div class="direita">
