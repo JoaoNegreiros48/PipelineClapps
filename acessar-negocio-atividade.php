@@ -85,7 +85,7 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
             <div class="main">
                 <div class="topo">
                     <div class="diretorio" style="width: 400px;">
-                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="font-weight: 800; color: #4E73DF;">Meus negócios</p> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
+                    <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Pipeline</a> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Meus negócios</a> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
                     </div>
                 </div>
                 <div class="superior">

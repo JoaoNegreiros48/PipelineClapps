@@ -100,6 +100,7 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -117,6 +118,8 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
+                                    
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -134,6 +137,7 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -151,6 +155,7 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -168,6 +173,7 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -185,6 +191,7 @@ while ($linha = $sql->fetch_array()) {
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nomeProjeto'] ?></p>
+                                    <p id="status"><?php echo $linha['statusNegocio'] ?></p>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>

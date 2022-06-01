@@ -208,6 +208,11 @@ body{
     margin-right: 10px;
     margin-left: 10px;
 }
+.diretorio a{
+    font-size: 14px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
 .topo #criar-proposta{
     margin-left: auto;
     margin-right: 80px;

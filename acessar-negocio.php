@@ -10,6 +10,7 @@ while ($linha = $sql->fetch_array()) {
 }
 
 $id_negocio = $_GET['id'];
+$_SESSION['idnegocio'] = $id_negocio;
 $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 while ($linha = $sql->fetch_array()) {
     $nomeProjeto = $linha['nomeProjeto'];
@@ -85,14 +86,14 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
             <div class="main">
                 <div class="topo">
                     <div class="diretorio" style="width: 400px;">
-                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Pipeline</p> / <p style="font-weight: 800; color: #4E73DF;">Meus negócios</p> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
+                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Pipeline</a> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Meus negócios</a> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
                     </div>
                 </div>
                 <div class="superior">
                     <p id="nomeNegocio">Negócio <?php echo $nomeProjeto ?></p>
                     <div class="botoes">
-                        <p id="aceita">Ganho</p>
-                        <p id="recusada">Perdida</p>
+                        <a href="./assets/php/ganho.php" id="aceita">Ganho</a>
+                        <a href="./assets/php/perdido.php" id="recusada">Perdida</a>
                     </div>
                 </div>
                 <div class="funcionalidades">

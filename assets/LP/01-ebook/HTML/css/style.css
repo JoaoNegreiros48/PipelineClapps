@@ -391,7 +391,7 @@ Page Preloder
 ---------------------------------- */
 
 .header-background {
-    background: url(../images/background.png);
+    /* background: url(../images/background.png); */
     background-position: center;
     background-size: cover;
 }

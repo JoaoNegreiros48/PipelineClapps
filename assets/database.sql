@@ -1,5 +1,5 @@
-create database pipeline;
-use pipeline;	
+-- create database pipeline;
+-- use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -23,7 +23,8 @@ create table negocio (
     valor varchar(255) not null,
     telefone varchar(255) not null,
     dataNegocio varchar(255) not null,
-    tipo varchar(255) not null
+    tipo varchar(255) not null,
+    statusNegocio varchar(255) not null
 );
 
 create table observacao (
@@ -72,5 +73,5 @@ ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
 
-select * from atividade; 
+select * from negocio; 
 select * from usuarios;
