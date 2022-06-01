@@ -32,6 +32,18 @@ while ($linha = $sql->fetch_array()) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 300,
+  'GRAD' 0,
+  'opsz' 30;
+  opacity: 70%;
+}
+</style>
 
     <title>Clapps | Main</title>
 </head>
@@ -92,6 +104,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #4E46FC;">
                             <p contentEditable="true" id="kanban1"><?php echo $menu1 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone">
                             <?php
@@ -110,6 +123,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #9B51E0;">
                             <p contentEditable="true" id="kanban2"><?php echo $menu2 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone1">
                             <?php
@@ -129,6 +143,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #30D46F;">
                             <p contentEditable="true" id="kanban3"><?php echo $menu3 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone2">
                             <?php
@@ -147,6 +162,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #D69108;">
                             <p contentEditable="true" id="kanban4"><?php echo $menu4 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone3">
                             <?php
@@ -165,6 +181,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #42E2CF;">
                             <p contentEditable="true" id="kanban5"><?php echo $menu5 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone4">
                             <?php
@@ -183,6 +200,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #E14A39;">
                             <p contentEditable="true" id="kanban6"><?php echo $menu6 ?></p>
+                            <span class="material-symbols-outlined">edit</span>
                         </div>
                         <div class="dropzone" id="dropzone5">
                             <?php
