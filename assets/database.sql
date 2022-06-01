@@ -1,5 +1,5 @@
--- create database pipeline;
--- use pipeline;	
+create database pipeline;
+use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -11,7 +11,8 @@ create table usuarios (
     pipeline_menu_3 varchar(255) DEFAULT "Apresentado",
     pipeline_menu_4 varchar(255) DEFAULT "Proposta feita",
     pipeline_menu_5 varchar(255) DEFAULT "Sob contrato",
-    pipeline_menu_6 varchar(255) DEFAULT "Proposta rejeitada"
+    pipeline_menu_6 varchar(255) DEFAULT "Proposta rejeitada",
+    agenda varchar(1000)
 );
 
 create table negocio (
@@ -72,6 +73,8 @@ ALTER TABLE `negocio` ADD CONSTRAINT `fk_id_usuario` FOREIGN KEY ( `idUsuario` )
 ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_usuario` ) REFERENCES `usuarios` ( `id` );
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
+
+update usuarios set agenda = '' where id = '1';
 
 select * from negocio; 
 select * from usuarios;

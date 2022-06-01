@@ -124,7 +124,7 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                             <div class="barra-de-navegacao">
                                 <a class="item" href="./acessar-negocio.php?id=<?php echo $id_negocio ?>"><span class="material-symbols-outlined">description</span>Observação</a>
                                 <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;"><span class="material-symbols-outlined">local_activity</span>Atividade</a>
-                                <a class="item" href="./acessar-negocio-agenda.php?id=<?php echo $id_negocio ?>" style="width: auto;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
+                                <a class="item" href="./acessar-negocio-agenda.php?id=<?php echo $id_negocio ?>" style="width: 130px;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
                             </div>
                             <div class="menuAtividade">
                                 <div>

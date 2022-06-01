@@ -7,10 +7,10 @@ $sql =  mysqli_query($conexao, "select * from usuarios where id = $id;");
 while ($linha = $sql->fetch_array()) {
     $nome = $linha['nome'];
     $email = $linha['email'];
+    $iframe = $linha['agenda'];
 }
 
 $id_negocio = $_GET['id'];
-$_SESSION['idnegocio'] = $id_negocio;
 $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 while ($linha = $sql->fetch_array()) {
     $nomeProjeto = $linha['nomeProjeto'];
@@ -94,8 +94,8 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                 <div class="superior">
                     <p id="nomeNegocio">Negócio <?php echo $nomeProjeto ?></p>
                     <div class="botoes">
-                        <a href="./assets/php/ganho.php" id="aceita">Ganho</a>
-                        <a href="./assets/php/perdido.php" id="recusada">Perdida</a>
+                        <p id="aceita">Ganho</p>
+                        <p id="recusada">Perdida</p>
                     </div>
                 </div>
                 <div class="funcionalidades">
@@ -121,27 +121,24 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                             </form>
                     </div>
                     <div class="direita">
-                        <div class="superior">
+                        <div class="superior" style="height: 200px">
                             <div class="barra-de-navegacao">
-                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;"><span class="material-symbols-outlined">description</span>Observação</a>
+                                <a class="item" href="./acessar-negocio.php?id=<?php echo $id_negocio ?>"><span class="material-symbols-outlined">description</span>Observação</a>
                                 <a class="item" href="./acessar-negocio-atividade.php?id=<?php echo $id_negocio ?>"><span class="material-symbols-outlined">local_activity</span>Atividade</a>
-                                <a class="item" href="./acessar-negocio-agenda.php?id=<?php echo $id_negocio ?>" style="width: 130px;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
+                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%; width: 130px;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
                             </div>
-                            <div class="menu">
-                                <textarea name="" id="observacao" cols="30" rows="8"></textarea>
-                                <button id="aceita" style="margin-right: 10px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
-                            </div>
-                        </div>
-                        <div class="linhadotempo">
-                            <?php
-                            $sql =  mysqli_query($conexao, "select * from observacao where id_negocio = $id_negocio;");
-                            while ($linha = $sql->fetch_array()) { ?>
-                                <div class="item">
-                                    <p id="data"><?php echo formatarData2($linha['criacao']) ?></p>
-                                    <p id="obs"><?php echo $linha['observacao'] ?></p>
+                            <div class="menuAtividade">
+                                <div style="margin-right: auto;">
+                                    <form action="./assets/php/adicionarAgenda.php" method="POST">
+                                        <p id="form-text">Link da agenda google</p>
+                                        <input type="text" id="descricao" name="agenda">
+                                        <button type="submit" id="aceita" style="margin-top: 10px;">Adicionar</button>
+                                    </form>
                                 </div>
-                            <?php } ?>
+                            </div>
                         </div>
+                        <a href="https://calendar.google.com/calendar/u/0/r/eventedit?tab=rc&pli=1" id="recusada" style="margin-top: 10px;" target="_blank">Adicionar evento</a>
+                        <div class="linhadotempo"><?php echo $iframe;?></div>
                     </div>
                 </div>
             </div>
@@ -150,14 +147,32 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function adicionarObservacao(idnegocio) {
-            observacao = document.getElementById('observacao').value;
+        function adicionarAtividade(idnegocio) {
+            descricao = document.getElementById('descricao').value;
+            responsavel = document.getElementById('responsavel').value;
+            prazo = document.getElementById('prazo').value;
+
+            console.log(descricao, responsavel, prazo, idnegocio)
 
             $.ajax({
-                url: './assets/php/adicionarObservacao.php',
+                url: './assets/php/adicionarAtividade.php',
                 data: {
-                    observacao: observacao,
+                    descricao: descricao,
+                    responsavel: responsavel,
+                    prazo: prazo,
                     idnegocio: idnegocio
+                },
+                type: 'POST',
+            }).done(function(result) {
+                document.location.reload(true);
+            });
+        }
+
+        function realizarTarefa(idAtividade) {
+            $.ajax({
+                url: './assets/php/realizarTarefa.php',
+                data: {
+                    idAtividade: idAtividade,
                 },
                 type: 'POST',
             }).done(function(result) {
