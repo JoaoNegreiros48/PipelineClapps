@@ -35,6 +35,8 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <title>Clapps | <?php echo $nomeProjeto ?></title>
 </head>
 
@@ -85,7 +87,7 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
             <div class="main">
                 <div class="topo">
                     <div class="diretorio" style="width: 400px;">
-                    <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Pipeline</a> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Meus negócios</a> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
+                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Pipeline</a> / <a href="./main.php" style="font-weight: 800; color: #4E73DF;">Meus negócios</a> / <p style="color: #858796;"><?php echo $nomeProjeto ?></p>
                     </div>
                 </div>
                 <div class="superior">
@@ -98,28 +100,31 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                 <div class="funcionalidades">
                     <div class="esquerda">
                         <?php while ($linha = $sql->fetch_array()) { ?>
-                            <form action="./assets/php/criarNegocio.php" method="POST" id="form">
+                            <form action="./assets/php/alterarInfo.php" method="POST" id="form">
                                 <p id="form-text">Nome do cliente</p>
-                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email" disabled="" value="<?php echo $linha['nomeCliente']; ?>">
+                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email" value="<?php echo $linha['nomeCliente']; ?>">
                                 <p id="form-text">E-mail do cliente</p>
-                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>" disabled="" name="emailCliente" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>" name="emailCliente" id="email">
                                 <p id="form-text">Telefone</p>
-                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>" disabled="" name="telefone" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>" name="telefone" id="email">
 
                                 <p id="form-text">Nome do projeto</p>
-                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>" disabled="" name="nomeProjeto" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>" name="nomeProjeto" id="email">
                                 <p id="form-text">Valor</p>
-                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>" disabled="" name="valor" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>" name="valor" id="email">
                                 <p id="form-text">Data de fechamento esperada</p>
-                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email" disabled="">
+                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email">
+
                             <?php } ?>
+                            <br><button type="submit">Salvar alterações</button>
                             </form>
                     </div>
                     <div class="direita">
                         <div class="superior" style="height: 250px">
                             <div class="barra-de-navegacao">
-                                <a class="item" href="./acessar-negocio.php?id=<?php echo $id_negocio ?>">Observação</a>
-                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;">Atividade</a>
+                                <a class="item" href="./acessar-negocio.php?id=<?php echo $id_negocio ?>"><span class="material-symbols-outlined">description</span>Observação</a>
+                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;"><span class="material-symbols-outlined">local_activity</span>Atividade</a>
+                                <a class="item" href="./acessar-negocio-agenda.php?id=<?php echo $id_negocio ?>" style="width: auto;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
                             </div>
                             <div class="menuAtividade">
                                 <div>
@@ -136,30 +141,30 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                             </div>
                         </div>
                         <div class="linhadotempo">
-                            <?php 
-                                $sql =  mysqli_query($conexao, "select * from atividade where id_negocio = $id_negocio;");
-                                while ($linha = $sql->fetch_array()) { ?>
-                            <div class="item" style="background-color: white; width: 98%; display: flex; flex-direction: row; justify-content: space-around;">
-                                <div>
-                                    <p id="form-text">Descrição</p>
-                                    <input type="text" id="descricao" disabled="" value="<?php echo $linha['descricao']?>">
-                                    <p id="form-text">Responsável</p>
-                                    <input type="text" id="responsavel" disabled="" value="<?php echo $linha['responsavel']?>">
-                                </div>
-                                <div>
-                                    <p id="form-text">Prazo</p>
-                                    <input type="date" id="prazo" disabled="" value="<?php echo $linha['dataAtividade']?>">
-                                    <?php 
-                                        if($linha['status'] == "Marcar como realizada"){
+                            <?php
+                            $sql =  mysqli_query($conexao, "select * from atividade where id_negocio = $id_negocio;");
+                            while ($linha = $sql->fetch_array()) { ?>
+                                <div class="item" style="background-color: white; width: 98%; display: flex; flex-direction: row; justify-content: space-around;">
+                                    <div>
+                                        <p id="form-text">Descrição</p>
+                                        <input type="text" id="descricao" disabled="" value="<?php echo $linha['descricao'] ?>">
+                                        <p id="form-text">Responsável</p>
+                                        <input type="text" id="responsavel" disabled="" value="<?php echo $linha['responsavel'] ?>">
+                                    </div>
+                                    <div>
+                                        <p id="form-text">Prazo</p>
+                                        <input type="date" id="prazo" disabled="" value="<?php echo $linha['dataAtividade'] ?>">
+                                        <?php
+                                        if ($linha['status'] == "Marcar como realizada") {
                                             $style = "recusada";
-                                        }else if ($linha['status'] == "Realizada"){
+                                        } else if ($linha['status'] == "Realizada") {
                                             $style = "aceita";
                                         }
-                                    ?>
-                                    <button id="<?php echo $style?>" style="margin-top: 30px;" onclick="realizarTarefa( <?php echo $linha['id']?>)"><?php echo $linha['status']?></button>
+                                        ?>
+                                        <button id="<?php echo $style ?>" style="margin-top: 30px;" onclick="realizarTarefa( <?php echo $linha['id'] ?>)"><?php echo $linha['status'] ?></button>
+                                    </div>
                                 </div>
-                            </div>
-                            <?php }?>
+                            <?php } ?>
 
                         </div>
                     </div>
@@ -176,7 +181,7 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
             prazo = document.getElementById('prazo').value;
 
             console.log(descricao, responsavel, prazo, idnegocio)
-            
+
             $.ajax({
                 url: './assets/php/adicionarAtividade.php',
                 data: {

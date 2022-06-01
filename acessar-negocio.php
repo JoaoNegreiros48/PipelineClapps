@@ -36,6 +36,8 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
     <title>Clapps | <?php echo $nomeProjeto ?></title>
 </head>
 
@@ -101,44 +103,45 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
                         <?php while ($linha = $sql->fetch_array()) { ?>
                             <form action="./assets/php/alterarInfo.php" method="POST" id="form">
                                 <p id="form-text">Nome do cliente</p>
-                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email"  value="<?php echo $linha['nomeCliente']; ?>">
+                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email" value="<?php echo $linha['nomeCliente']; ?>">
                                 <p id="form-text">E-mail do cliente</p>
-                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>"  name="emailCliente" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['emailCliente']; ?>" name="emailCliente" id="email">
                                 <p id="form-text">Telefone</p>
-                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>"  name="telefone" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['telefone']; ?>" name="telefone" id="email">
 
                                 <p id="form-text">Nome do projeto</p>
-                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>"  name="nomeProjeto" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['nomeProjeto']; ?>" name="nomeProjeto" id="email">
                                 <p id="form-text">Valor</p>
-                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>"  name="valor" id="email">
+                                <input id="email" type="text" value="<?php echo $linha['valor']; ?>" name="valor" id="email">
                                 <p id="form-text">Data de fechamento esperada</p>
-                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email" >
-                                
+                                <input id="data" type="date" name="data" value="<?php echo $linha['dataNegocio']; ?>" id="email">
+
                             <?php } ?>
                             <br><button type="submit">Salvar alterações</button>
                             </form>
                     </div>
                     <div class="direita">
-                            <div class="superior">
-                                <div class="barra-de-navegacao">
-                                    <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;">Observação</a>
-                                    <a class="item" href="./acessar-negocio-atividade.php?id=<?php echo $id_negocio ?>">Atividade</a>
-                                </div>
-                                <div class="menu">
-                                    <textarea name="" id="observacao" cols="30" rows="8"></textarea>
-                                    <button id="aceita" style="margin-right: 10px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
-                                </div>
+                        <div class="superior">
+                            <div class="barra-de-navegacao">
+                                <a class="item" style="background-color: #deeafa; border-bottom: 2px solid #317ae2; color: #317ae2; opacity: 100%;"><span class="material-symbols-outlined">description</span>Observação</a>
+                                <a class="item" href="./acessar-negocio-atividade.php?id=<?php echo $id_negocio ?>"><span class="material-symbols-outlined">local_activity</span>Atividade</a>
+                                <a class="item" href="./acessar-negocio-agenda.php?id=<?php echo $id_negocio ?>" style="width: auto;"><span class="material-symbols-outlined">calendar_month</span>Google Agenda</a>
                             </div>
-                            <div class="linhadotempo">
-                                <?php 
-                                    $sql =  mysqli_query($conexao, "select * from observacao where id_negocio = $id_negocio;");
-                                    while ($linha = $sql->fetch_array()) { ?>
+                            <div class="menu">
+                                <textarea name="" id="observacao" cols="30" rows="8"></textarea>
+                                <button id="aceita" style="margin-right: 10px;" onclick="adicionarObservacao( <?php echo $idProjeto ?>)">Publicar</button>
+                            </div>
+                        </div>
+                        <div class="linhadotempo">
+                            <?php
+                            $sql =  mysqli_query($conexao, "select * from observacao where id_negocio = $id_negocio;");
+                            while ($linha = $sql->fetch_array()) { ?>
                                 <div class="item">
-                                    <p id="data"><?php echo formatarData2($linha['criacao'])?></p>
-                                    <p id="obs"><?php echo $linha['observacao']?></p>
+                                    <p id="data"><?php echo formatarData2($linha['criacao']) ?></p>
+                                    <p id="obs"><?php echo $linha['observacao'] ?></p>
                                 </div>
-                                <?php }?>
-                            </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -147,30 +150,35 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
-        function adicionarObservacao(idnegocio){
+        function adicionarObservacao(idnegocio) {
             observacao = document.getElementById('observacao').value;
-            
+
             $.ajax({
                 url: './assets/php/adicionarObservacao.php',
-                data: {observacao: observacao, idnegocio: idnegocio},
+                data: {
+                    observacao: observacao,
+                    idnegocio: idnegocio
+                },
                 type: 'POST',
-            }).done(function(result){
+            }).done(function(result) {
                 document.location.reload(true);
             });
         }
-        function abrirPerfil(){
+
+        function abrirPerfil() {
             document.getElementById('perfil-active').style = "display: flex; z-index: 2; position: fixed;"
             document.getElementById('container').style = "opacity: 50%;"
-            setTimeout(function(){
+            setTimeout(function() {
                 document.getElementById('container').setAttribute('onclick', "fecharPerfil()")
-            },100);
-            
+            }, 100);
+
         }
-        function fecharPerfil(){
+
+        function fecharPerfil() {
             document.getElementById('perfil-active').style = "display: none;"
             document.getElementById('container').style = "opacity: 100%;"
             document.getElementById('container').setAttribute('onclick', "")
-        } 
+        }
     </script>
 </body>
 
