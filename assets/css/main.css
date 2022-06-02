@@ -161,6 +161,10 @@ body{
     align-items: center;
     justify-content: initial;
 }
+.leftbar:hover .item span{
+    margin-left: 15px;
+    margin-right: 15px;
+}
 .leftbar:hover .item img{
     margin-left: 15px;
     margin-right: 15px;

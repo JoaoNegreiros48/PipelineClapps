@@ -56,23 +56,24 @@ $sql =  mysqli_query($conexao, "select * from negocio where id = $id_negocio;");
         </div>
     </div>
     <div class="container" id="container">
-        <div class="leftbar">
+    <div class="leftbar">
             <a class="item">
                 <img src="./assets/img/logo-minify.png" alt="" style="margin-right: 0; width: 40px; height: 40px;">
                 <img src="./assets/img/logo-extends.png" alt="">
             </a>
             <a href="main.php" class="item">
-                <img src="./assets/img/icon-leads.png" alt="">
+            <span class="material-symbols-outlined" style="color: white;">view_kanban</span>
                 <p>Pipeline</p>
             </a>
             <a href="proposta.php" class="item">
-                <img src="./assets/img/icon-proposta.png" alt="">
+                <span class="material-symbols-outlined" style="color: white;">next_week</span>
                 <p>Proposta</p>
             </a>
             <a href="landingpage.php" class="item">
-                <img src="./assets/img/icon-landingpage.png" alt="">
+            <span class="material-symbols-outlined" style="color: white;">web</span>
                 <p>Landing Page</p>
             </a>
+            
         </div>
 
         <div style="display: flex; flex-direction: column; width: 100%" id="main">

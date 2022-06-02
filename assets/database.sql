@@ -1,5 +1,5 @@
-create database pipeline;
-use pipeline;	
+-- create database pipeline;
+-- use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
