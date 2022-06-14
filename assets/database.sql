@@ -1,5 +1,5 @@
 -- create database pipeline;
--- use pipeline;	
+use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -15,6 +15,16 @@ create table usuarios (
     agenda varchar(1000)
 );
 
+create table subconta (
+	id int(9) primary key not null auto_increment,
+    id_usuario int(9),
+    nome varchar(255) not null,
+	email varchar(255) not null,
+    senha varchar(255) not null,
+    funcao varchar(255),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+select * from subconta;
 create table negocio (
 	id int(9) primary key not null auto_increment,
     idUsuario int(9) not null,

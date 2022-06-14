@@ -77,8 +77,16 @@ while ($linha = $sql->fetch_array()) {
                 <p>Proposta</p>
             </a>
             <a href="landingpage.php" class="item">
-            <span class="material-symbols-outlined" style="color: white;">web</span>
+                <span class="material-symbols-outlined" style="color: white;">web</span>
                 <p>Landing Page</p>
+            </a>
+            <a href="" class="item">
+            <span class="material-symbols-outlined" style="color: white;">fact_check</span>
+                <p>Projetos</p>
+            </a>
+            <a href="equipe.php" class="item">
+                <span class="material-symbols-outlined" style="color: white;">group</span>
+                <p>Equipe</p>
             </a>
             
         </div>

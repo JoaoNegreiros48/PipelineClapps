@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./styles/assets/favicon.png"/>
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+
+    <title>Clapps | Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="formulario" style="margin-top: 0;">
+            <p id="title">Adicionar membro a sua equipe</p>
+            <form action="./assets/php/adicionarMembro.php" method="POST" id="formulario">
+                <div class="email">
+                    <input type="text" placeholder="E-mail" name="email">
+                </div>
+                <input type="text" placeholder="Nome" name="nome">
+                <input type="text" placeholder="Função na equipe" name="funcao">
+                <div class="senha" style="height: 50px; align-items: center;">
+                    <input type="password" id="senha" placeholder="Senha" name="senha" style="height: 40px; margin-top: 5px;">
+                    <p id="mostrarSenha" onclick="mostrarSenha()">Mostrar</p>
+                </div>
+                <button type="submit" style="margin-top: 15px; border-radius: 5px; height: 40px;">Cadastrar</button>
+            </form>
+        </div>
+    
+
+        <script>
+            
+            let controle = 0;
+            function mostrarSenha(){
+                // document.getElementById('senha').type = "text"
+                if(controle == 0){
+                    document.getElementById('senha').type = "text"
+                    controle = 1
+                }
+                else{
+                    document.getElementById('senha').type = "password"
+                    controle = 0
+                }
+            }
+
+            function redirecionarFacebookLogin(){
+            window.location.replace("facebookLogin.php");
+            }
+            function redirecionarGoogleLogin(){
+                window.location.replace("autenticarUsuarioGoogle.php");
+            }
+        </script>
+    </div>
+</body>
+</html>
