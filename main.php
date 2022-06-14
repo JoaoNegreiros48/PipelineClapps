@@ -80,7 +80,7 @@ while ($linha = $sql->fetch_array()) {
                 <span class="material-symbols-outlined" style="color: white;">web</span>
                 <p>Landing Page</p>
             </a>
-            <a href="" class="item">
+            <a href="projetos.php" class="item">
             <span class="material-symbols-outlined" style="color: white;">fact_check</span>
                 <p>Projetos</p>
             </a>

@@ -24,7 +24,7 @@ create table subconta (
     funcao varchar(255),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
-select * from subconta;
+
 create table negocio (
 	id int(9) primary key not null auto_increment,
     idUsuario int(9) not null,
@@ -36,6 +36,21 @@ create table negocio (
     dataNegocio varchar(255) not null,
     tipo varchar(255) not null,
     statusNegocio varchar(255) not null
+);
+
+create table projetos(
+	id int(9) auto_increment primary key not null,
+    nome varchar(255) not null,
+    nomeCliente varchar(255) not null,
+    emailCliente varchar(255) not null,
+    telefone varchar(255) not null,
+    prazo varchar(255) not null,
+    valor varchar(255) not null,
+    responsavel varchar(255) not null,
+    descricao varchar(255) not null,
+    idUsuario int(9) not null,
+    status varchar(255) not null,
+    FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
 
 create table observacao (

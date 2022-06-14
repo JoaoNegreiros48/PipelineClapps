@@ -102,3 +102,14 @@ button[type = "submit"]{
     border: .1px solid #2C2C2C;
     color: #2C2C2C;
 }
+select{
+    width: calc(100% - 5px);
+    height: 35px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #E2E2E2;
+    border-radius: 5px;
+    cursor: pointer;
+}
