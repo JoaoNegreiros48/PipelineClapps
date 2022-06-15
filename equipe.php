@@ -63,7 +63,7 @@ while ($linha = $sql->fetch_array()) {
         </div>
     </div>
     <div class="container" id="container">
-        <div class="leftbar">
+    <div class="leftbar">
             <a class="item">
                 <img src="./assets/img/logo-minify.png" alt="" style="margin-right: 0; width: 40px; height: 40px;">
                 <img src="./assets/img/logo-extends.png" alt="">
@@ -80,7 +80,7 @@ while ($linha = $sql->fetch_array()) {
                 <span class="material-symbols-outlined" style="color: white;">web</span>
                 <p>Landing Page</p>
             </a>
-            <a href="" class="item">
+            <a href="projetos.php" class="item">
             <span class="material-symbols-outlined" style="color: white;">fact_check</span>
                 <p>Projetos</p>
             </a>
