@@ -52,7 +52,7 @@ create table projetos(
     status varchar(255) not null,
     FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
-
+select * from projetos;
 create table observacao (
 	id int(9) primary key not null auto_increment,
     id_negocio int(9) not null,

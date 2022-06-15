@@ -100,7 +100,7 @@ while ($linha = $sql->fetch_array()) {
                     <div class="diretorio">
                         <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Projetos</p> / <p style="color: #858796;">Meus projetos</p>
                     </div>
-                    <a href="./criar-projeto.html" id="criar-proposta">CRIAR PROJETO</a>
+                    <a href="./criar-projeto.php" id="criar-proposta">CRIAR PROJETO</a>
                 </div>
                 <div class="pipeline">
                     <div class="guia">
@@ -112,14 +112,19 @@ while ($linha = $sql->fetch_array()) {
                             <?php
                             $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'A iniciar';");
                             while ($linha = $sql->fetch_array()) {
+                                $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nome'] ?></p>
-                                    <p id="status"><?php echo $linha['responsavel'] ?></p>
+                                    <?php
+                                    $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
+                                    while ($var = $insert->fetch_array()) {
+                                    ?>
+                                        <p id="status"><?php echo $var['nome'] ?></p>
+                                    <?php } ?>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
-
                         </div>
                     </div>
                     <span class="line"></span>
@@ -129,13 +134,19 @@ while ($linha = $sql->fetch_array()) {
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
                         <div class="dropzone" id="dropzone1">
-                            <?php
+                        <?php
                             $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'Em progresso';");
                             while ($linha = $sql->fetch_array()) {
+                                $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nome'] ?></p>
-                                    <p id="status"><?php echo $linha['responsavel'] ?></p>
+                                    <?php
+                                    $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
+                                    while ($var = $insert->fetch_array()) {
+                                    ?>
+                                        <p id="status"><?php echo $var['nome'] ?></p>
+                                    <?php } ?>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
@@ -148,13 +159,19 @@ while ($linha = $sql->fetch_array()) {
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
                         <div class="dropzone" id="dropzone2">
-                            <?php
+                        <?php
                             $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'Finalizado';");
                             while ($linha = $sql->fetch_array()) {
+                                $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['nome'] ?></p>
-                                    <p id="status"><?php echo $linha['responsavel'] ?></p>
+                                    <?php
+                                    $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
+                                    while ($var = $insert->fetch_array()) {
+                                    ?>
+                                        <p id="status"><?php echo $var['nome'] ?></p>
+                                    <?php } ?>
                                     <p id="idNegocio"><?php echo $linha['id'] ?></p>
                                 </div>
                             <?php } ?>
