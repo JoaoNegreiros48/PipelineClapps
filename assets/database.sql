@@ -24,7 +24,6 @@ create table subconta (
     funcao varchar(255),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
-
 create table negocio (
 	id int(9) primary key not null auto_increment,
     idUsuario int(9) not null,

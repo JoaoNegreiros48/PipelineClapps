@@ -6,9 +6,9 @@ $negocio = $_POST['negocio'];
 
 $sql =  mysqli_query($conexao, "update projetos set status = '$tipo' where id = $negocio;");
 
-if($sql){
-    echo "foi";
-} else{
-    echo "m";
-}
+// if($sql){
+//     echo "foi";
+// } else{
+//     echo "m";
+// }
 ?>

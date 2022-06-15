@@ -1,14 +1,20 @@
 <?php
 include "./assets/php/conecta.php";
 session_start();
+$id_projeto = $_GET['id'];
+$_SESSION['projetoAtivo'] = $id_projeto;
+$sql =  mysqli_query($conexao, "select * from projetos where id = $id_projeto;");
+while ($linha = $sql->fetch_array()) {
+    $nome_projeto = $linha['nome'];
+}
 $id = $_SESSION['id'];
-
 $sql =  mysqli_query($conexao, "select * from usuarios where id = $id;");
 while ($linha = $sql->fetch_array()) {
     $nome = $linha['nome'];
     $email = $linha['email'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,7 +25,7 @@ while ($linha = $sql->fetch_array()) {
 
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/global.css">
-    <link rel="stylesheet" href="./assets/css/projetos.css">
+    <link rel="stylesheet" href="./assets/css/acessar-projeto.css">
 
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
@@ -97,25 +103,24 @@ while ($linha = $sql->fetch_array()) {
             </div>
             <div class="main">
                 <div class="topo">
-                    <div class="diretorio">
-                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <p style="font-weight: 800; color: #4E73DF;">Projetos</p> / <p style="color: #858796;">Meus projetos</p>
+                    <div class="diretorio" style="width: 400px;">
+                        <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./projetos.php" style="font-weight: 800; color: #4E73DF;">Projetos</a> / <p style="font-weight: 800; color: #4E73DF;">Meus projetos</p> / <p style="color: #858796;"><?php echo $nome_projeto; ?></p>
                     </div>
-                    <a href="./criar-projeto.php" id="criar-proposta">CRIAR PROJETO</a>
                 </div>
-                <div class="pipeline">
+                <div class="pipeline" style="height: 300px;">
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #4E46FC;">
-                            <p id="kanban1">A iniciar</p>
+                            <p id="kanban1">Tarefas planejadas</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
                         <div class="dropzone" id="dropzone">
                             <?php
-                            $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'A iniciar';");
+                            $sql =  mysqli_query($conexao, "select * from tarefas where id_projeto = $id_projeto and status = 'Tarefas planejadas';");
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
-                                    <p><?php echo $linha['nome'] ?></p>
+                                    <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
                                     while ($var = $insert->fetch_array()) {
@@ -126,21 +131,22 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
+                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
                     <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #c00810;">
-                            <p id="kanban2">Em progresso</p>
+                            <p id="kanban2">Tarefas em progresso</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
                         <div class="dropzone" id="dropzone1">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'Em progresso';");
+                            <?php
+                            $sql =  mysqli_query($conexao, "select * from tarefas where id_projeto = $id_projeto and status = 'Tarefas em progresso';");
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
-                                    <p><?php echo $linha['nome'] ?></p>
+                                    <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
                                     while ($var = $insert->fetch_array()) {
@@ -151,21 +157,22 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
+                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
                     <span class="line"></span>
                     <div class="guia">
                         <div class="titulo" style="border-top: 3px solid #30D46F;">
-                            <p id="kanban3">Finalizados</p>
+                            <p id="kanban3">Tarefas finalizadas</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
                         <div class="dropzone" id="dropzone2">
-                        <?php
-                            $sql =  mysqli_query($conexao, "select * from projetos where idUsuario = $id and status = 'Finalizado';");
+                            <?php
+                            $sql =  mysqli_query($conexao, "select * from tarefas where id_projeto = $id_projeto and status = 'Tarefas finalizadas';");
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
                                 <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
-                                    <p><?php echo $linha['nome'] ?></p>
+                                    <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
                                     while ($var = $insert->fetch_array()) {
@@ -176,6 +183,33 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
+                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
+                    </div>
+                    <span class="line"></span>
+                    <div class="guia">
+                        <div class="titulo" style="border-top: 3px solid #fbbc04;">
+                            <p id="kanban4">Tarefas arquivadas</p>
+                            <!-- <span class="material-symbols-outlined">edit</span> -->
+                        </div>
+                        <div class="dropzone" id="dropzone3">
+                            <?php
+                            $sql =  mysqli_query($conexao, "select * from tarefas where id_projeto = $id_projeto and status = 'Tarefas arquivadas';");
+                            while ($linha = $sql->fetch_array()) {
+                                $idsubconta = $linha['responsavel'];
+                            ?>
+                                <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
+                                    <p><?php echo $linha['titulo'] ?></p>
+                                    <?php
+                                    $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
+                                    while ($var = $insert->fetch_array()) {
+                                    ?>
+                                        <p id="status"><?php echo $var['nome'] ?></p>
+                                    <?php } ?>
+                                    <p id="idNegocio"><?php echo $linha['id'] ?></p>
+                                </div>
+                            <?php } ?>
+                        </div>
+                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
 
                 </div>
@@ -202,9 +236,10 @@ while ($linha = $sql->fetch_array()) {
         }
 
         // ------------------------ negocio ------------------------
-        function abrirNegocio(obj) {
+        function adicionarTarefa(obj) {
+            console.log(obj)
             id = obj
-            window.location.href = "./acessar-projeto.php?id=" + id;
+            window.location.href = "./criar-tarefa.php?id=" + id;
         }
 
 
@@ -215,6 +250,7 @@ while ($linha = $sql->fetch_array()) {
         const dropzone = document.getElementById("dropzone")
         const dropzone1 = document.getElementById("dropzone1")
         const dropzone2 = document.getElementById("dropzone2")
+        const dropzone3 = document.getElementById("dropzone3")
 
         function arrastar() {
             cards.forEach((card) => {
@@ -233,14 +269,14 @@ while ($linha = $sql->fetch_array()) {
             console.log(negocio)
 
             if (this.id == "dropzone") {
-                tipo = "A iniciar"
+                tipo = "Tarefas planejadas"
 
                 datas = {
                     tipo: tipo,
                     negocio: negocio
                 }
                 $.ajax({
-                    url: './assets/php/mudarTipoProjeto.php',
+                    url: './assets/php/mudarTipoTarefa.php',
                     type: 'post',
                     data: datas,
                     success: function(data) {
@@ -248,14 +284,14 @@ while ($linha = $sql->fetch_array()) {
                     }
                 });
             } else if (this.id == "dropzone1") {
-                tipo = "Em progresso"
+                tipo = "Tarefas em progresso"
 
                 datas = {
                     tipo: tipo,
                     negocio: negocio
                 }
                 $.ajax({
-                    url: './assets/php/mudarTipoProjeto.php',
+                    url: './assets/php/mudarTipoTarefa.php',
                     type: 'post',
                     data: datas,
                     success: function(data) {
@@ -263,14 +299,29 @@ while ($linha = $sql->fetch_array()) {
                     }
                 });
             } else if (this.id == "dropzone2") {
-                tipo = "Finalizado"
+                tipo = "Tarefas finalizadas"
 
                 datas = {
                     tipo: tipo,
                     negocio: negocio
                 }
                 $.ajax({
-                    url: './assets/php/mudarTipoProjeto.php',
+                    url: './assets/php/mudarTipoTarefa.php',
+                    type: 'post',
+                    data: datas,
+                    success: function(data) {
+                        console.log(data)
+                    }
+                });
+            } else if (this.id == "dropzone3") {
+                tipo = "Tarefas arquivadas"
+
+                datas = {
+                    tipo: tipo,
+                    negocio: negocio
+                }
+                $.ajax({
+                    url: './assets/php/mudarTipoTarefa.php',
                     type: 'post',
                     data: datas,
                     success: function(data) {
@@ -293,6 +344,7 @@ while ($linha = $sql->fetch_array()) {
         dropzone.addEventListener("dragover", soltar)
         dropzone1.addEventListener("dragover", soltar)
         dropzone2.addEventListener("dragover", soltar)
+        dropzone3.addEventListener("dragover", soltar)
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
