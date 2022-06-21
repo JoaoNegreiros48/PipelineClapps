@@ -1,4 +1,4 @@
--- create database pipeline;
+create database pipeline;
 use pipeline;	
 
 create table usuarios (
@@ -24,6 +24,7 @@ create table subconta (
     funcao varchar(255),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
+
 create table negocio (
 	id int(9) primary key not null auto_increment,
     idUsuario int(9) not null,
@@ -51,7 +52,17 @@ create table projetos(
     status varchar(255) not null,
     FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
-select * from projetos;
+create table tarefas(
+	id int(9) auto_increment primary key not null,
+    id_projeto int(9) not null,
+    titulo varchar(255) not null,
+    descricao varchar(255) not null,
+    responsavel varchar(255) not null,
+    prazo varchar(255) not null,
+    prioridade varchar(255) not null,
+    status varchar(255) not null,
+    FOREIGN KEY (id_projeto) REFERENCES projetos(id)
+);
 create table observacao (
 	id int(9) primary key not null auto_increment,
     id_negocio int(9) not null,
@@ -59,7 +70,6 @@ create table observacao (
     criacao date,
 	FOREIGN KEY (id_negocio) REFERENCES negocio(id)
 );
-
 create table atividade (
 	id int(9) primary key not null auto_increment,
     id_negocio int(9) not null,
@@ -69,7 +79,6 @@ create table atividade (
     status varchar(255),
 	FOREIGN KEY (id_negocio) REFERENCES negocio(id)
 );
-
 create table proposta
 (
 	id_proposta int(9) primary key not null auto_increment,
@@ -83,7 +92,6 @@ create table proposta
     DMY datetime,
     status_proposta varchar(255)
 ); 
-
 create table pagina(
 	id int(9) auto_increment primary key not null,
     nome varchar(255) not null,
@@ -98,7 +106,10 @@ ALTER TABLE `proposta` ADD CONSTRAINT `fk_id_usuarioProposta` FOREIGN KEY ( `id_
 
 insert into usuarios (email, senha, nome) values ('email@contato.com', '123', "Nome de usuario");
 
-update usuarios set agenda = '' where id = '1';
+select * from tarefas where id_projeto = 1 and responsavel = 1;
+select count(*) from tarefas where id_projeto = 1 and responsavel = 1 and status = 'Tarefas em progresso';
+select count(*) from tarefas where id_projeto = 1 and responsavel = 1;
 
-select * from negocio; 
-select * from usuarios;
+select * from subconta;
+
+update usuarios set agenda = '' where id = '1';

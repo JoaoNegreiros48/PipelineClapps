@@ -49,6 +49,9 @@ while ($linha = $sql->fetch_array()) {
 </head>
 
 <body>
+    <div class="verTarefa" id="tarefa-active">
+
+    </div>
     <div class="perfil-active" id="perfil-active">
         <div class="img">
             <img src="http://clapps-com-br.apache7.cloudsector.net/uploads/images/pm.jpg" alt="">
@@ -102,14 +105,45 @@ while ($linha = $sql->fetch_array()) {
                 </div>
             </div>
             <div class="main">
-                <div class="topo">
+                <div class="topo" style="margin-top: 10px;">
                     <div class="diretorio" style="width: 400px;">
                         <p style="font-weight: 800; color: #4E73DF;">Painel</p> / <a href="./projetos.php" style="font-weight: 800; color: #4E73DF;">Projetos</a> / <p style="font-weight: 800; color: #4E73DF;">Meus projetos</p> / <p style="color: #858796;"><?php echo $nome_projeto; ?></p>
                     </div>
+                    <div class="porcentagem">
+                        <?php
+                        $sql =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto;");
+                        while ($linha = $sql->fetch_array()) {
+                            $total = $linha['count(*)'];
+                        }
+                        $sql =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and status = 'Tarefas finalizadas';");
+                        while ($linha = $sql->fetch_array()) {
+                            $finalizadas = $linha['count(*)'];
+                        }
+                        if ($finalizadas <= 0 || $total <= 0) {
+                            $resultado = 0;
+                        } else {
+                            $resultado = round(($finalizadas / $total) * 100);
+                        }
+                        ?>
+                        <style>
+                            .porcentagem .progress-bar::before {
+                                content: "";
+                                width: <?php echo $resultado; ?>%;
+                                border-radius: 15px;
+                                background-color: #4e73df;
+                            }
+                        </style>
+                        <div style="width:100%; height: 10px; display: flex; flex-direction: row;">
+                            <p>Projeto <?php echo $nome_projeto ?></p>
+                            <p><?php echo $finalizadas ?>/<?php echo $total ?> - <?php echo $resultado ?>%</p>
+                        </div>
+
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
                 </div>
-                <div class="pipeline" style="height: 300px;">
-                    <div class="guia">
-                        <div class="titulo" style="border-top: 3px solid #4E46FC;">
+                <div class="pipeline" style="height: 300px; margin-top: 10px; margin-bottom: 15px">
+                    <div class="guia" style="background-color: #569afb;">
+                        <div class="titulo">
                             <p id="kanban1">Tarefas planejadas</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
@@ -119,7 +153,7 @@ while ($linha = $sql->fetch_array()) {
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
-                                <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
+                                <div class="card" onclick="abrirTarefa(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
@@ -131,11 +165,11 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
-                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
+                        <button class="newtask" style="background-color: #569afb;" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
                     <span class="line"></span>
-                    <div class="guia">
-                        <div class="titulo" style="border-top: 3px solid #c00810;">
+                    <div class="guia" style="background-color: #ffac2c;">
+                        <div class="titulo">
                             <p id="kanban2">Tarefas em progresso</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
@@ -145,7 +179,7 @@ while ($linha = $sql->fetch_array()) {
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
-                                <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
+                                <div class="card" onclick="abrirTarefa(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
@@ -157,11 +191,11 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
-                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
+                        <button class="newtask" style="background-color: #ffac2c;" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
                     <span class="line"></span>
-                    <div class="guia">
-                        <div class="titulo" style="border-top: 3px solid #30D46F;">
+                    <div class="guia" style="background-color: #00d068;">
+                        <div class="titulo">
                             <p id="kanban3">Tarefas finalizadas</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
@@ -171,7 +205,7 @@ while ($linha = $sql->fetch_array()) {
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
-                                <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
+                                <div class="card" onclick="abrirTarefa(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
@@ -183,11 +217,11 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
-                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
+                        <button class="newtask" style="background-color: #00d068;" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
                     <span class="line"></span>
-                    <div class="guia">
-                        <div class="titulo" style="border-top: 3px solid #fbbc04;">
+                    <div class="guia" style="background-color: #e44259;">
+                        <div class="titulo">
                             <p id="kanban4">Tarefas arquivadas</p>
                             <!-- <span class="material-symbols-outlined">edit</span> -->
                         </div>
@@ -197,7 +231,7 @@ while ($linha = $sql->fetch_array()) {
                             while ($linha = $sql->fetch_array()) {
                                 $idsubconta = $linha['responsavel'];
                             ?>
-                                <div class="card" onclick="abrirNegocio(<?php echo $linha['id'] ?>)" draggable="true">
+                                <div class="card" onclick="abrirTarefa(<?php echo $linha['id'] ?>)" draggable="true">
                                     <p><?php echo $linha['titulo'] ?></p>
                                     <?php
                                     $insert =  mysqli_query($conexao, "select * from subconta where id = $idsubconta;");
@@ -209,9 +243,69 @@ while ($linha = $sql->fetch_array()) {
                                 </div>
                             <?php } ?>
                         </div>
-                        <button class="newtask" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
+                        <button class="newtask" style="background-color: #e44259;" onclick="adicionarTarefa(<?php echo $id_projeto; ?>)"><b>+</b> Adicionar tarefa</button>
                     </div>
 
+                </div>
+                <div class="teamtasks">
+                    <p>Tarefas do time</p>
+                    <div class="paper">
+                    <?php
+                        $sql =  mysqli_query($conexao, "select * from subconta where id_usuario = $id;");
+                        while ($dados = $sql->fetch_array()) {
+                            $id_sub = $dados['id'];
+                            $query =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and responsavel = $id_sub;");
+                            while ($linha = $query->fetch_array()) {
+                                $total = $linha['count(*)'];
+                            }
+                            $query =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and responsavel = $id_sub and status = 'Tarefas planejadas';");
+                            while ($linha = $query->fetch_array()) {
+                                $planejadas = $linha['count(*)'];
+                            }
+                            $query =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and responsavel = $id_sub and status = 'Tarefas em progresso';");
+                            while ($linha = $query->fetch_array()) {
+                                $progresso = $linha['count(*)'];
+                            }
+                            $query =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and responsavel = $id_sub and status = 'Tarefas finalizadas';");
+                            while ($linha = $query->fetch_array()) {
+                                $finalizadas = $linha['count(*)'];
+                            }
+                            $query =  mysqli_query($conexao, "select count(*) from tarefas where id_projeto = $id_projeto and responsavel = $id_sub and status = 'Tarefas arquivadas';");
+                            while ($linha = $query->fetch_array()) {
+                                $arquivadas = $linha['count(*)'];
+                            }
+                            if ($finalizadas <= 0 || $total <= 0) {
+                                $resultado = 0;
+                            } else {
+                                $resultado = round(($finalizadas / $total) * 100);
+                            }
+
+                        ?>
+                            <div class="membro">
+                                <p><?php echo $dados['nome'];?></p>
+                                <div class="tasks">
+                                    <div class="task" style="background-color: #569afb;"><?php echo $planejadas?> Planejadas</div>
+                                    <div class="task" style="background-color: #ffac2c;"><?php echo $progresso?> Em progresso</div>
+                                    <div class="task" style="background-color: #00d068;"><?php echo $finalizadas;?> Finalizadas</div>
+                                    <div class="task" style="background-color: #e44259;"><?php echo $arquivadas;?> Arquivadas</div>
+                                </div>
+                                <style>
+                                    .barra .progress-bar-<?php echo str_replace(" ", '', $dados['nome']);?>::before {
+                                        content: "";
+                                        width: <?php echo $resultado; ?>%;
+                                        border-radius: 15px;
+                                        background-color: #589ff5;
+                                    }
+                                </style>
+                                <div class="barra">
+                                    <div class="progress-bar-<?php echo str_replace(" ", '', $dados['nome']);?>" id="progress-bar"></div>
+                                </div>
+                            </div>
+                        <?php
+                        }
+
+                        ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -231,15 +325,35 @@ while ($linha = $sql->fetch_array()) {
 
         function fecharPerfil() {
             document.getElementById('perfil-active').style = "display: none;"
+            document.getElementById('tarefa-active').style = "display: none;"
             document.getElementById('container').style = "opacity: 100%;"
             document.getElementById('container').setAttribute('onclick', "")
         }
 
-        // ------------------------ negocio ------------------------
+        // ------------------------ tarefa ------------------------
         function adicionarTarefa(obj) {
-            console.log(obj)
             id = obj
             window.location.href = "./criar-tarefa.php?id=" + id;
+        }
+
+        function abrirTarefa(obj) {
+            let id = obj;
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+                if (req.readyState == 4 && req.status == 200) {
+                    // document.getElementById('display').innerHTML = req.responseText;
+                    $('#tarefa-active').load('./assets/php/carregarTarefa.php?id=' + id)
+                }
+            }
+
+            req.open('GET', './assets/php/carregarTarefa.php?id=' + id, true);
+            req.send();
+
+            document.getElementById('tarefa-active').style = "display: flex;"
+            document.getElementById('container').style = "opacity: 50%;"
+            setTimeout(function() {
+                document.getElementById('container').setAttribute('onclick', "fecharPerfil()")
+            }, 100);
         }
 
 
