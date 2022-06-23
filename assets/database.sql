@@ -1,5 +1,5 @@
-create database pipeline;
-use pipeline;	
+-- create database pipeline;
+-- use pipeline;	
 
 create table usuarios (
 	id int(9) primary key not null auto_increment,
@@ -52,6 +52,7 @@ create table projetos(
     status varchar(255) not null,
     FOREIGN KEY (idUsuario) REFERENCES usuarios(id)
 );
+
 create table tarefas(
 	id int(9) auto_increment primary key not null,
     id_projeto int(9) not null,
@@ -113,3 +114,5 @@ select count(*) from tarefas where id_projeto = 1 and responsavel = 1;
 select * from subconta;
 
 update usuarios set agenda = '' where id = '1';
+
+delete from subconta where id = 2;

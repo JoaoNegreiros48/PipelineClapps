@@ -250,7 +250,7 @@ while ($linha = $sql->fetch_array()) {
                 <div class="teamtasks">
                     <p>Tarefas do time</p>
                     <div class="paper">
-                    <?php
+                        <?php
                         $sql =  mysqli_query($conexao, "select * from subconta where id_usuario = $id;");
                         while ($dados = $sql->fetch_array()) {
                             $id_sub = $dados['id'];
@@ -282,15 +282,15 @@ while ($linha = $sql->fetch_array()) {
 
                         ?>
                             <div class="membro">
-                                <p><?php echo $dados['nome'];?></p>
+                                <p><?php echo $dados['nome']; ?></p>
                                 <div class="tasks">
-                                    <div class="task" style="background-color: #569afb;"><?php echo $planejadas?> Planejadas</div>
-                                    <div class="task" style="background-color: #ffac2c;"><?php echo $progresso?> Em progresso</div>
-                                    <div class="task" style="background-color: #00d068;"><?php echo $finalizadas;?> Finalizadas</div>
-                                    <div class="task" style="background-color: #e44259;"><?php echo $arquivadas;?> Arquivadas</div>
+                                    <div class="task" style="background-color: #569afb;"><?php echo $planejadas ?> Planejadas</div>
+                                    <div class="task" style="background-color: #ffac2c;"><?php echo $progresso ?> Em progresso</div>
+                                    <div class="task" style="background-color: #00d068;"><?php echo $finalizadas; ?> Finalizadas</div>
+                                    <div class="task" style="background-color: #e44259;"><?php echo $arquivadas; ?> Arquivadas</div>
                                 </div>
                                 <style>
-                                    .barra .progress-bar-<?php echo str_replace(" ", '', $dados['nome']);?>::before {
+                                    .barra .progress-bar-<?php echo str_replace(" ", '', $dados['nome']); ?>::before {
                                         content: "";
                                         width: <?php echo $resultado; ?>%;
                                         border-radius: 15px;
@@ -298,7 +298,7 @@ while ($linha = $sql->fetch_array()) {
                                     }
                                 </style>
                                 <div class="barra">
-                                    <div class="progress-bar-<?php echo str_replace(" ", '', $dados['nome']);?>" id="progress-bar"></div>
+                                    <div class="progress-bar-<?php echo str_replace(" ", '', $dados['nome']); ?>" id="progress-bar"></div>
                                 </div>
                             </div>
                         <?php
@@ -306,6 +306,64 @@ while ($linha = $sql->fetch_array()) {
 
                         ?>
                     </div>
+                </div>
+                <span class="line"></span>
+
+                <div class="info">
+                    <p>Informações do projeto</p>
+                    <?php
+                    $sql =  mysqli_query($conexao, "select * from projetos where id = $id_projeto;");
+                    while ($linha = $sql->fetch_array()) {
+                        $nome_projeto = $linha['nome'];
+                        $nome_cliente = $linha['nomeCliente'];
+                        $email_cliente = $linha['emailCliente'];
+                        $telefone = $linha['telefone'];
+                        $prazo = $linha['prazo'];
+                        $valor = $linha['valor'];
+                        $responsavel = $linha['responsavel'];
+                        $descricao = $linha['descricao'];
+
+                        $sql =  mysqli_query($conexao, "select * from subconta where id = $responsavel;");
+                        while ($linha = $sql->fetch_array()) {
+                            $nomeresponsavel = $linha['nome'];
+                        }
+                    }
+                    ?>
+
+                    <form action="./assets/php/alterarProjeto.php" method="POST" id="form">
+                        <div style="display: flex; flex-direction: row; width: 100%;">
+                            <div style="width: 45%; margin-right: auto;">
+                                <p id="form-text">Nome do cliente</p>
+                                <input id="email" type="text" placeholder="" name="nomeCliente" id="email" value="<?php echo $nome_cliente; ?>">
+                                <p id="form-text">E-mail do cliente</p>
+                                <input id="email" type="text" placeholder="email@contato.com" name="emailCliente" id="email" value="<?php echo $email_cliente; ?>">
+                                <p id="form-text">Telefone</p>
+                                <input id="email" type="text" placeholder="(XX) XXXXX-XXXX" name="telefone" id="email" value="<?php echo $telefone; ?>">
+                                <p id="form-text">Valor</p>
+                                <input id="email" type="text" placeholder="R$ " name="valor" id="email" value="<?php echo $valor; ?>">
+                            </div>
+                            <div style="width: 45%; margin-left: auto;">
+                                <p id="form-text">Nome do projeto</p>
+                                <input id="email" type="text" placeholder="" name="nomeProjeto" id="email" value="<?php echo $nome_projeto; ?>">
+                                <p id="form-text">Responsavel</p>
+                                <select name="responsavel" id="email">
+                                    <option value="<?php echo $responsavel; ?>" selected><?php echo $nomeresponsavel; ?></option>
+                                    <?php
+                                    $id = $_SESSION['id'];
+                                    $sql =  mysqli_query($conexao, "select * from subconta where id_usuario = $id and id <> $responsavel;");
+                                    while ($linha = $sql->fetch_array()) {
+                                    ?>
+                                        <option value="<?php echo $linha['id']; ?>"><?php echo $linha['nome']; ?></option>
+                                    <?php } ?>
+                                </select>
+                                <p id="form-text">Descrição</p>
+                                <input id="email" type="text" placeholder="..." name="descricao" id="email" value="<?php echo $descricao; ?>">
+                                <p id="form-text">Prazo</p>
+                                <input id="data" type="date" name="data" id="email" value="<?php echo $prazo; ?>">
+                            </div>
+                        </div>
+                        <button type="submit">Salvar alterações</button>
+                    </form>
                 </div>
             </div>
         </div>

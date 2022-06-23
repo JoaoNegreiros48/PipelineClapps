@@ -122,6 +122,8 @@ body{
     width: 70px;
     height: 100%;
     background-color: #4E73DF;
+    position: fixed;
+    z-index: 1;
 }
 .leftbar .item:first-child{
     border-bottom: none;
@@ -186,9 +188,10 @@ body{
     background-color: #e7e7e7;
 }
 .main{
-    width: 100%;
+    width: calc(100% - 90px);
     height: calc(100% - 55px);
     background-color: #F8F9FC;
+    margin-left: 70px;
 }
 .topo{
     display: flex;
