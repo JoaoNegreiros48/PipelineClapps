@@ -438,7 +438,6 @@ while ($linha = $sql->fetch_array()) {
 
             negocio = $(elementoArrastado).children('#idNegocio')[0];
             negocio = negocio.innerText
-            console.log(negocio)
 
             if (this.id == "dropzone") {
                 tipo = "Tarefas planejadas"
@@ -452,7 +451,9 @@ while ($linha = $sql->fetch_array()) {
                     type: 'post',
                     data: datas,
                     success: function(data) {
-                        console.log(data)
+                        setTimeout(function(){
+                            document.location.reload(true);
+                        },1000);
                     }
                 });
             } else if (this.id == "dropzone1") {
@@ -467,7 +468,9 @@ while ($linha = $sql->fetch_array()) {
                     type: 'post',
                     data: datas,
                     success: function(data) {
-                        console.log(data)
+                        setTimeout(function(){
+                            document.location.reload(true);
+                        },1000);
                     }
                 });
             } else if (this.id == "dropzone2") {
@@ -482,7 +485,9 @@ while ($linha = $sql->fetch_array()) {
                     type: 'post',
                     data: datas,
                     success: function(data) {
-                        console.log(data)
+                        setTimeout(function(){
+                            document.location.reload(true);
+                        },1000);
                     }
                 });
             } else if (this.id == "dropzone3") {
@@ -497,7 +502,9 @@ while ($linha = $sql->fetch_array()) {
                     type: 'post',
                     data: datas,
                     success: function(data) {
-                        console.log(data)
+                        setTimeout(function(){
+                            document.location.reload(true);
+                        },1000);
                     }
                 });
             }
