@@ -50,7 +50,7 @@ while ($linha = $sql->fetch_array()) {
 
 <body>
     <div class="verTarefa" id="tarefa-active">
-
+    
     </div>
     <div class="perfil-active" id="perfil-active">
         <div class="img">
