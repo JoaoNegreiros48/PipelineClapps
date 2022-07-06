@@ -77,3 +77,11 @@
     opacity: 0;
     font-size: 2px;
 }
+.pipeline{
+    width: 800px;
+    background-color: #f8f9fc;
+}
+.guia{
+    width: calc(750px / 3);
+    background-color: none;
+}
